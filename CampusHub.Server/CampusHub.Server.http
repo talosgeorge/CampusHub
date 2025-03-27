@@ -1,0 +1,6 @@
+@CampusHub.Server_HostAddress = http://localhost:5296
+
+GET {{CampusHub.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

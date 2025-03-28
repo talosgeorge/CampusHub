@@ -1,1 +1,3 @@
 D:\CampusHub\campushub.client\obj\Debug\campushub.client.esproj.CoreCompileInputs.cache
+C:\faculta\II\CampusHub\campushub.client\obj\Debug\campushub.client.esproj.CoreCompileInputs.cache
+C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\campushub.client\obj\Debug\campushub.client.esproj.CoreCompileInputs.cache

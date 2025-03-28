@@ -1,4 +1,21 @@
+using AngularApp1.Server.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+string connectionString =
+    "Data Source=ASUS\\SQLEXPRESS01;Initial Catalog=CampusHub;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy => policy.WithOrigins("http://localhost:4200") // Angular default port
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
 
 // Add services to the container.
 

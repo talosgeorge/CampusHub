@@ -1,0 +1,25 @@
+<header>
+    <nav class="nav-bar">
+        <div class="logo">
+            <img src="assets/images/logoCampusHub.png">
+        </div>
+
+        <div class="smallDevicesMenu">
+            <ul>
+                <li class="dropDownSmallDeviceMenu" (click)="toggleMenu()"><fa-icon [icon]="faBars"></fa-icon></li> 
+            </ul>
+        </div>
+
+        <div class="menuItems" [ngClass]="{'showMenu': showMenu}">
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <hr>
+                <li>Grades</li>
+                <hr>
+                <li>Contact</li>
+                <hr>
+                <li><button class="signUpButton">Sign Up</button></li>
+            </ul>
+        </div>
+    </nav>
+</header>

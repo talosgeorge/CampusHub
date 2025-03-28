@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,13 +8,17 @@ interface WeatherForecast {
   temperatureF: number;
   summary: string;
 }
+=======
+import { Component } from '@angular/core';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
+<<<<<<< Updated upstream
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
 
@@ -35,4 +40,8 @@ export class AppComponent implements OnInit {
   }
 
   title = 'campushub.client';
+=======
+export class AppComponent {
+ 
+>>>>>>> Stashed changes
 }

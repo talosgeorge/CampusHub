@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "HSPg95YoB9qdzHSUj0PXKStWtT1bjPAtJkyPy3YfJXY=",
+  "Hash": "Hbd6HMY1uObdpq5d9RLOe8xG9dtLoatlR302oVYZt6M=",
   "Source": "CampusHub.Server",
   "BasePath": "_content/CampusHub.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\faculta\\II\\CampusHub\\campushub.client\\campushub.client.esproj",
+      "Identity": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\campushub.client.esproj",
       "Version": 2,
       "Source": "campushub.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

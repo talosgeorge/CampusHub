@@ -1,23 +1,24 @@
 {
   "Version": 1,
-  "Hash": "YkRetcHKKAxp/kfvFrBzwEugO/dy1XYgzRaNbcXIqxc=",
+  "Hash": "96gN+BLxjfGVc+h1k6wEyCxiDgFFBLMa89iB8itUuNg=",
   "Source": "CampusHub.Server",
   "BasePath": "_content/CampusHub.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\CampusHub\\campushub.client\\campushub.client.esproj",
+      "Identity": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\campushub.client.esproj",
       "Version": 2,
       "Source": "campushub.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

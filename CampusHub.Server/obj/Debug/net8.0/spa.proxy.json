@@ -3,11 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-<<<<<<< Updated upstream
-"WorkingDirectory": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\..\\campushub.client",
-=======
 "WorkingDirectory": "D:\\CampusHub\\CampusHub.Server\\..\\campushub.client",
->>>>>>> Stashed changes
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

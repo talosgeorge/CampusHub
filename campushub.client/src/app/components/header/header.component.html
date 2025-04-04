@@ -12,13 +12,13 @@
 
         <div class="menuItems" [ngClass]="{'showMenu': showMenu}">
             <ul>
-                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
                 <hr>
                 <li>Grades</li>
                 <hr>
                 <li>Contact</li>
                 <hr>
-                <li><button class="signUpButton">Sign Up</button></li>
+                <a routerLink="/register"><li><button class="signUpButton">Sign Up</button></li></a>
             </ul>
         </div>
     </nav>

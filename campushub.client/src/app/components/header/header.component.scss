@@ -24,6 +24,14 @@ header{
     
 }
 
+a{
+    text-decoration: none;
+    color:#333;
+    &:hover{
+        color: red;
+    }
+}
+
 .menuItems{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     

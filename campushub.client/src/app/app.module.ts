@@ -7,17 +7,22 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterOutlet } from '@angular/router';
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
     HeaderComponent,
     HomeComponent,
-    RouterOutlet
+    RouterOutlet,
+    RegisterComponent,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ namespace AngularApp1.Server.Data
 
     using Microsoft.EntityFrameworkCore;
 
-    public class AppDbContext : DbContext
+    public class AppDbContext : IDentityDbContext<UserAccount>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

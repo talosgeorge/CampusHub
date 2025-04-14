@@ -1,6 +1,6 @@
 ﻿namespace AngularApp1.Server.Models
 {
-    public class UserAccount
+    public class UserAccount : IdentityUser
     {
         public int id { get; set; }
         public string email { get; set; }

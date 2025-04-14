@@ -379,10 +379,10 @@ C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CampusHub.Server.props
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CampusHub.Server.props
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHu.67F13FDA.Up2Date
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.dll
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\refint\CampusHub.Server.dll
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.pdb
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.genruntimeconfig.cache
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\ref\CampusHub.Server.dll
+C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\bin\Debug\net8.0\package-lock.json

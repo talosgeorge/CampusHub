@@ -60,7 +60,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.SpaProxy/8.0.14": {
+      "Microsoft.AspNetCore.SpaProxy/8.0.15": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.SpaProxy.dll": {}
@@ -1770,10 +1770,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.AspNetCore.SpaProxy/8.0.14": {
-      "sha512": "pkiYeNCNjZjSU5PVD6zlYSuDMCKNRHvhVF3O8pw6rPNNG7khKq8fIRbz/ROCLaiLTHVeOiNfsn8TSVYP0NIboA==",
+    "Microsoft.AspNetCore.SpaProxy/8.0.15": {
+      "sha512": "Qni1g9jjcyiwkwB/+A9tf4lTJLUTniy/ktxQn+/9fxIjt8/Aqor+Cc5GThOwnz9WlN9L9m43q5WQ7zSx8u+UEA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.spaproxy/8.0.14",
+      "path": "microsoft.aspnetcore.spaproxy/8.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1781,7 +1781,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.AspNetCore.SpaProxy.targets",
         "lib/net8.0/Microsoft.AspNetCore.SpaProxy.dll",
-        "microsoft.aspnetcore.spaproxy.8.0.14.nupkg.sha512",
+        "microsoft.aspnetcore.spaproxy.8.0.15.nupkg.sha512",
         "microsoft.aspnetcore.spaproxy.nuspec"
       ]
     },
@@ -5182,23 +5182,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\molna\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\simon\\.nuget\\packages\\": {},
+    "D:\\VS CVA\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+      "projectUniqueName": "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
       "projectName": "CampusHub.Server",
-      "projectPath": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
-      "packagesPath": "C:\\Users\\molna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\obj\\",
+      "projectPath": "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
+      "outputPath": "D:\\CampusHub\\CampusHub.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\VS CVA\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\molna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5207,6 +5207,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5219,13 +5220,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -5273,7 +5268,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

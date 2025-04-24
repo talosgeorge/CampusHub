@@ -1,15 +1,15 @@
 ﻿using AngularApp1.Server.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace AngularApp1.Server.Data
 {
-
-    using Microsoft.EntityFrameworkCore;
-
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<UserAccount>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        // Custom tables
         public DbSet<UserDetails> userDetailSet { get; set; }
         public DbSet<UserAccount> userAccountSet { get; set; }
     }

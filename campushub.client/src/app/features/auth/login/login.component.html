@@ -1,0 +1,9 @@
+<section class="login-container">
+  <h2>Autentificare</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input type="text" formControlName="emailOrUsername" placeholder="Username sau Email">
+    <input type="password" formControlName="password" placeholder="Parolă">
+    <button type="submit" class="authButton">Loghează-te în cont</button>
+  </form>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</section>

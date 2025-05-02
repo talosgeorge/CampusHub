@@ -1,0 +1,26 @@
+<section class="registerBackground">
+  <div class="container">
+
+    <div class="registrationTitle">
+      <h1>Registration Form</h1>
+    </div>
+
+    <form [formGroup]="registerForm">
+      <input type="text" placeholder="Username" formControlName="username" />
+      <input type="email" placeholder="Email" formControlName="email" />
+      <input type="password" placeholder="Password" formControlName="password" />
+      <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+    </form>
+
+    <div class="submitButtons">
+      <input class="textfields" type="checkbox" />
+      <label>I accept all terms & conditions</label>
+    </div>
+
+    <div class="action-buttons">
+      <button class="submitRegister" (click)="onSubmit()">Register</button>
+      <button class="goToLogin" (click)="goToLogin()">Loghează-te</button>
+    </div>
+
+  </div>
+</section>

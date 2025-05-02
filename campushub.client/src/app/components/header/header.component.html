@@ -11,15 +11,25 @@
         </div>
 
         <div class="menuItems" [ngClass]="{'showMenu': showMenu}">
-            <ul>
-                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-                <hr>
-                <li>Grades</li>
-                <hr>
-                <li>Contact</li>
-                <hr>
-                <a routerLink="/register"><li><button class="signUpButton">Sign Up</button></li></a>
-            </ul>
+          <ul>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+            <hr>
+            <li>Grades</li>
+            <hr>
+            <li>Contact</li>
+            <hr>
+            <li>
+              <a routerLink="/login">
+                <button class="authButton">Login</button>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/register">
+                <button class="authButton">Sign Up</button>
+              </a>
+            </li>
+          </ul>
+
         </div>
     </nav>
 </header>

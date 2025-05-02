@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {}
+    "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {
+    "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+        "projectUniqueName": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
         "projectName": "CampusHub.Server",
-        "projectPath": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
-        "packagesPath": "C:\\Users\\molna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\obj\\",
+        "projectPath": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+        "packagesPath": "C:\\Users\\talos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\molna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\talos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

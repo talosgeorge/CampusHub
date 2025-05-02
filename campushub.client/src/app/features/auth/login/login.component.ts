@@ -1,45 +1,45 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import {  FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { LoginService } from '../services/login.service';
+
 
 @Component({
   standalone: true,
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  imports: [CommonModule, ReactiveFormsModule]
+  styleUrls: ['./login.component.scss'],
+  imports: [NgIf,FormsModule,CommonModule]
 })
+
 export class LoginComponent {
-  loginForm: FormGroup;
   errorMessage: string = '';
   isLoading = false;
+  usernameOrEmail:string = '';
+  password:string = '';
+  isConnected:boolean = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private loginService: LoginService,
-    private router: Router
-  ) {
-    this.loginForm = this.fb.group({
-      emailOrUsername: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-  }
 
-  login() {
-    if (this.loginForm.invalid) return;
+  loginService = inject(LoginService);
+  router = inject(Router);
+
+  login():void {
     this.isLoading = true;
-
-    this.loginService.login(this.loginForm.value).subscribe({
+    this.loginService.login(this.usernameOrEmail,this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/students']);
+        this.isConnected = true;
+        this.errorMessage = '';
       },
       error: () => {
         this.errorMessage = 'Autentificare eșuată';
+        console.log(this.usernameOrEmail);
+        console.log(this.password);
         this.isLoading = false;
       }
     });
-  }
+  } 
+
 }

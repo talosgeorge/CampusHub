@@ -8,10 +8,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// Simi: DESKTOP-3KFCOVV\SQLEXPRESS
+// Talos: Talos\\SQLEXPRESS03
 // === Configurare conexiune DB ===
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
+    ?? "Data Source=DESKTOP-3KFCOVV\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString)
@@ -49,9 +50,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
-        policy.WithOrigins("http://localhost:4200")
+    {
+        policy.WithOrigins("https://localhost:4200")
               .AllowAnyHeader()
-              .AllowAnyMethod());
+              .AllowAnyMethod()
+              .AllowCredentials(); // dacă folosești cookie-uri / sesiuni
+    });
 });
 
 // === Altele ===

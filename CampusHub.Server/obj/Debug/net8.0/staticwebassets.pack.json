@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
+      "PackagePath": "staticwebassets\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf",
+      "PackagePath": "staticwebassets\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CampusHub.Server.props",
+      "PackagePath": "build\\CampusHub.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CampusHub.Server.props",
+      "PackagePath": "buildMultiTargeting\\CampusHub.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CampusHub.Server.props",
+      "PackagePath": "buildTransitive\\CampusHub.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

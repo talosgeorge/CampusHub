@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CampusHub.Server.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/documente")]
     public class DocumenteController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -28,35 +28,44 @@ namespace CampusHub.Server.Controllers
         [HttpPost("upload")]
         public async Task<IActionResult> Upload([FromForm] DocumentUploadDto dto)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (dto.File == null || dto.File.Length == 0)
-                return BadRequest("Fișierul este invalid.");
-
-            var uploadsPath = Path.Combine(_env.WebRootPath ?? "wwwroot", "uploads");
-            Directory.CreateDirectory(uploadsPath);
-
-            var uniqueFileName = Guid.NewGuid() + Path.GetExtension(dto.File.FileName);
-            var filePath = Path.Combine(uploadsPath, uniqueFileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
+            try
             {
-                await dto.File.CopyToAsync(stream);
+                var userId = "b17bcce2-1cf3-45e6-9f1f-6bab6a6d51e2"; // temporar hardcoded, ca să nu folosești JWT
+
+                if (dto.File == null || dto.File.Length == 0)
+                    return BadRequest("Fișierul este invalid.");
+
+                var uploadsPath = Path.Combine(_env.WebRootPath ?? "wwwroot", "uploads");
+                Directory.CreateDirectory(uploadsPath);
+
+                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(dto.File.FileName);
+                var filePath = Path.Combine(uploadsPath, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await dto.File.CopyToAsync(stream);
+                }
+
+                var document = new Document
+                {
+                    UserId = userId,
+                    TipDocumentId = dto.TipDocumentId,
+                    Descriere = dto.Descriere,
+                    FileName = dto.File.FileName,
+                    FilePath = "/uploads/" + uniqueFileName,
+                    DataUpload = DateTime.Now
+                };
+
+                _context.Documente.Add(document);
+                await _context.SaveChangesAsync();
+
+                return Ok("Document încărcat cu succes!");
             }
-
-            var document = new Document
+            catch (Exception ex)
             {
-                UserId = userId,
-                TipDocumentId = dto.TipDocumentId,
-                Descriere = dto.Descriere,
-                FileName = dto.File.FileName,
-                FilePath = "/uploads/" + uniqueFileName,
-                DataUpload = DateTime.Now
-            };
-
-            _context.Documente.Add(document);
-            await _context.SaveChangesAsync();
-
-            return Ok("Document încărcat cu succes!");
+                return StatusCode(500, $"Eroare la upload: {ex.Message}");
+            }
         }
+
     }
 }

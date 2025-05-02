@@ -40,9 +40,9 @@
                 "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
             }
         },
-        "environmentVariables": {
-            "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "false"
-        }
+      "environmentVariables": {
+        "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT": "false",
+      }
     }
 }
 

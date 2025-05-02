@@ -9,8 +9,10 @@ using AngularApp1.Server.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Database
+// Simi : DESKTOP-3KFCOVV\SQLEXPRESS
+// Chio : DESKTOP-SH9UD67\\SQLEXPRESS
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=DESKTOP-SH9UD67\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    ?? "Data Source=DESKTOP-3KFCOVV\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));

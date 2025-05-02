@@ -3,100 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_MOLNA_DOCUMENTS_ENTITYCORETEST.MDF/True/SqlTable/dbo.AspNetUserLogins.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\CampusHub.Server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\CampusHub.Server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:campushub.client\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:campushub.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:campushub.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:campushub.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:campushub.client\\src\\app\\app.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-=======
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\documentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\documentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\documentuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\documentuploaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\campushub.server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\campushub.server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> main
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\documentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\documentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -106,30 +30,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 1,
-=======
-          "SelectedChildIndex": 4,
->>>>>>> main
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "CampusHub.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.json",
+              "RelativeToolTip": "CampusHub.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-02T14:31:51.988Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "CampusHub.Server\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAkwA0AAAA+AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CampusHub.Server\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T22:16:36.606Z",
-=======
+              "WhenOpened": "2025-05-02T14:22:11.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\LoginModel.cs",
+              "RelativeToolTip": "CampusHub.Server\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T14:21:29.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\RegisterController.cs",
@@ -137,272 +85,21 @@
               "RelativeToolTip": "CampusHub.Server\\Controllers\\RegisterController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:55:38.817Z",
->>>>>>> main
+              "WhenOpened": "2025-05-02T14:12:55.842Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "dbo.AspNetUserLogins.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_MOLNA_DOCUMENTS_ENTITYCORETEST.MDF/True/SqlTable/dbo.AspNetUserLogins.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_MOLNA_DOCUMENTS_ENTITYCORETEST.MDF/True/SqlTable/dbo.AspNetUserLogins.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-04-08T22:11:55.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "RelativeToolTip": "CampusHub.Server\\Migrations\\AppDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T15:34:08.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CampusHub.Server.csproj",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
-              "RelativeDocumentMoniker": "CampusHub.Server\\CampusHub.Server.csproj",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
-              "RelativeToolTip": "CampusHub.Server\\CampusHub.Server.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-28T10:32:53.493Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Program.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Program.cs",
-              "RelativeToolTip": "CampusHub.Server\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T10:05:58.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CampusHub.Server.http",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.http",
-              "RelativeDocumentMoniker": "CampusHub.Server\\CampusHub.Server.http",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\CampusHub.Server.http",
-              "RelativeToolTip": "CampusHub.Server\\CampusHub.Server.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-03-28T10:05:42.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "app.component.html",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.html",
-              "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.html",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.html",
-              "RelativeToolTip": "campushub.client\\src\\app\\app.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-28T10:02:02.536Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "app.component.ts",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.ts",
-              "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.ts",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.ts",
-              "RelativeToolTip": "campushub.client\\src\\app\\app.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-28T09:59:40.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "app.module.ts",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.module.ts",
-              "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.module.ts",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.module.ts",
-              "RelativeToolTip": "campushub.client\\src\\app\\app.module.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-28T09:58:51.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "app-routing.module.ts",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app-routing.module.ts",
-              "RelativeDocumentMoniker": "campushub.client\\src\\app\\app-routing.module.ts",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app-routing.module.ts",
-              "RelativeToolTip": "campushub.client\\src\\app\\app-routing.module.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-28T09:58:45.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "app.component.css",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.css",
-              "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.css",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\src\\app\\app.component.css",
-              "RelativeToolTip": "campushub.client\\src\\app\\app.component.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-28T09:58:41.832Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.Server\\Properties\\launchSettings.json",
-              "RelativeToolTip": "CampusHub.Server\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-=======
-              "DocumentIndex": 3,
-              "Title": "TestController.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\TestController.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\TestController.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\TestController.cs",
-              "RelativeToolTip": "CampusHub.Server\\Controllers\\TestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:54:55.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DocumentUploadDto.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\DocumentUploadDto.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\DocumentUploadDto.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\DocumentUploadDto.cs",
-              "RelativeToolTip": "CampusHub.Server\\Models\\DocumentUploadDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:53:39.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "DocumenteController.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\DocumenteController.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\DocumenteController.cs",
               "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\DocumenteController.cs",
               "RelativeToolTip": "CampusHub.Server\\Controllers\\DocumenteController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAD4vw8AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T12:47:06.694Z",
+              "WhenOpened": "2025-05-02T14:12:54.434Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20250328151039_AddIdentityTables.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs",
-              "RelativeToolTip": "CampusHub.Server\\Migrations\\20250328151039_AddIdentityTables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:13:07.762Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterModel.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\RegisterModel.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\RegisterModel.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\RegisterModel.cs",
-              "RelativeToolTip": "CampusHub.Server\\Models\\RegisterModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:12:54.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "CampusHub.Server\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:12:34.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CampusHub.Server.http",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.http",
-              "RelativeDocumentMoniker": "CampusHub.Server\\CampusHub.Server.http",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\CampusHub.Server.http",
-              "RelativeToolTip": "CampusHub.Server\\CampusHub.Server.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-05-02T11:08:00.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "CampusHub.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.json",
-              "RelativeToolTip": "CampusHub.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
->>>>>>> main
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-02T11:04:16.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Program.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Program.cs",
-              "RelativeToolTip": "CampusHub.Server\\Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAIwEoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T11:01:54.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserDetails.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\UserDetails.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\UserDetails.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\UserDetails.cs",
-              "RelativeToolTip": "CampusHub.Server\\Models\\UserDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T10:59:12.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserAccount.cs",
-              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\UserAccount.cs",
-              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\UserAccount.cs",
-              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\UserAccount.cs",
-              "RelativeToolTip": "CampusHub.Server\\Models\\UserAccount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T10:59:10.374Z"
             }
           ]
         }

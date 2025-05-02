@@ -6,14 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AngularApp1.Server.Data
 {
-<<<<<<< HEAD
-
-    using Microsoft.EntityFrameworkCore;
-
-    public class AppDbContext : IDentityDbContext<UserAccount>
-=======
     public class AppDbContext : IdentityDbContext<UserAccount>
->>>>>>> main
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -21,6 +14,5 @@ namespace AngularApp1.Server.Data
         public DbSet<UserDetails> userDetailSet { get; set; }
         public DbSet<Document> Documente { get; set; }
         public DbSet<TipDocument> TipuriDocumente { get; set; }
-
     }
 }

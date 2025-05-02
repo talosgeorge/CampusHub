@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "XgjePBedwsiWXbqkBFD06HSs7fuODz2DfitusNXobvo=",
-=======
-  "Hash": "5FlNs/EH3Bd6FZVGi7Rz1lGLXC6pQXkDrzfy4S+hrrI=",
->>>>>>> main
+  "Hash": "GjyeDNZ7zhk0omWj4wAv1ttND5rFeBuRo00DT/Nebxc=",
   "Source": "CampusHub.Server",
   "BasePath": "_content/CampusHub.Server",
   "Mode": "Default",
@@ -12,23 +8,11 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\campushub.client\\campushub.client.esproj",
-      "Version": 2,
-      "Source": "campushub.client",
-      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
-=======
       "Name": "CampusHub.Server\\wwwroot",
       "Source": "CampusHub.Server",
       "ContentRoot": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\",
       "BasePath": "_content/CampusHub.Server",
       "Pattern": "**"
->>>>>>> main
     }
   ],
   "Assets": [
@@ -1291,6 +1275,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\talos\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.4\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "SourceId": "CampusHub.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\",
+      "BasePath": "_content/CampusHub.Server",
+      "RelativePath": "uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "whil8x8t1o",
+      "Integrity": "5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf"
     },
     {
       "Identity": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
@@ -3557,6 +3562,88 @@
       ]
     },
     {
+      "Route": "uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "AssetFile": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4436923"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.whil8x8t1o.pdf",
+      "AssetFile": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4436923"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "whil8x8t1o"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="
+        }
+      ]
+    },
+    {
       "Route": "uploads/542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
       "AssetFile": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
       "Selectors": [],
@@ -3579,7 +3666,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 13:00:22 GMT"
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3616,7 +3703,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 13:00:22 GMT"
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3661,7 +3748,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 13:04:50 GMT"
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3698,7 +3785,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 13:04:50 GMT"
+          "Value": "Fri, 02 May 2025 13:49:29 GMT"
         },
         {
           "Name": "Cache-Control",

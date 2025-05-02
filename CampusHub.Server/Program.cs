@@ -1,88 +1,75 @@
 ﻿using AngularApp1.Server.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.Globalization;
 using AngularApp1.Server.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Database
-// Simi : DESKTOP-3KFCOVV\SQLEXPRESS
-// Chio : DESKTOP-SH9UD67\\SQLEXPRESS
-// Talos : Talos\\SQLEXPRESS03
+// === Configurare conexiune DB ===
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-<<<<<<< HEAD
-builder.Services.AddIdentity<UserAccount, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
-
-
-=======
-// 🔹 Configure Identity - Choose ONE of these options:
-
-// OPTION 1: If using custom UserAccount (recommended)
-builder.Services.AddIdentity<UserAccount, IdentityRole>(options =>
-{
-    options.User.AllowedUserNameCharacters = null; // Allow any characters
-    options.User.RequireUniqueEmail = false;      // Allow duplicate emails
-})
-.AddEntityFrameworkStores<AppDbContext>();
-
-
-
-// 🔹 Enable CORS for Angular frontend
->>>>>>> main
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAngularApp",
-        policy => policy.WithOrigins("http://localhost:4200")
-            .AllowAnyHeader()
-            .AllowAnyMethod());
-});
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
     options.UseSqlServer(connectionString)
            .LogTo(Console.WriteLine, LogLevel.Information)
-           .EnableSensitiveDataLogging();
-});
+           .EnableSensitiveDataLogging());
 
-<<<<<<< HEAD
-
-builder.Services.ConfigureApplicationCookie(options =>
+// === Identity ===
+builder.Services.AddIdentity<UserAccount, IdentityRole>(options =>
 {
-    options.LoginPath = "/api/account/login";
-    options.LogoutPath = "/api/account/logout";
-    options.AccessDeniedPath = "/api/account/denied";
+    options.User.AllowedUserNameCharacters = null;
+    options.User.RequireUniqueEmail = false;
+})
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
+
+// === JWT Authentication ===
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
 });
 
+// === CORS pentru Angular ===
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
 
-builder.Services.AddControllersWithViews();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-=======
-// Add services to the container.
+// === Altele ===
 builder.Services.AddControllers();
->>>>>>> main
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseDefaultFiles();
-app.UseStaticFiles();
-
-// Configure the HTTP request pipeline.
+// === Pipeline ===
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

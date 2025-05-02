@@ -1,0 +1,40 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.whil8x8t1o.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"whil8x8t1o"},{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="},{"Name":"label","Value":"_content/CampusHub.Server/uploads/470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/542dadc3-2564-43e0-b91b-735fe69bb49f.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/542dadc3-2564-43e0-b91b-735fe69bb49f.whil8x8t1o.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"whil8x8t1o"},{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="},{"Name":"label","Value":"_content/CampusHub.Server/uploads/542dadc3-2564-43e0-b91b-735fe69bb49f.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/abc2862b-823c-4fad-8863-d21757d420d7.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abc2862b-823c-4fad-8863-d21757d420d7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CampusHub.Server/uploads/abc2862b-823c-4fad-8863-d21757d420d7.whil8x8t1o.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\abc2862b-823c-4fad-8863-d21757d420d7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"whil8x8t1o"},{"Name":"integrity","Value":"sha256-5DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I="},{"Name":"label","Value":"_content/CampusHub.Server/uploads/abc2862b-823c-4fad-8863-d21757d420d7.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4436923"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00225DxSVdGcZqJ29c4tlJGI25cSNVtxLwVLmohsDvaF4/I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 13:49:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

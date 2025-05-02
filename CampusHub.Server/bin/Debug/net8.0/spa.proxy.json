@@ -3,7 +3,11 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
+<<<<<<< HEAD
 "WorkingDirectory": "C:\\Users\\molna\\Documents\\Anul 3\\Sem 2\\II\\Proiect\\CampusHub\\CampusHub.server\\..\\campushub.client",
+=======
+"WorkingDirectory": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\../campushub.client",
+>>>>>>> main
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

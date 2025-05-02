@@ -1,10 +1,16 @@
-﻿namespace AngularApp1.Server.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace AngularApp1.Server.Models
 {
+<<<<<<< HEAD
     public class UserAccount : IdentityUser
+=======
+    public class UserAccount:IdentityUser
+>>>>>>> main
     {
-        public int id { get; set; }
-        public string email { get; set; }
-        public string username { get; set; }
-        public string parola { get; set; }
+        /*public int Id { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
+        public string Parola { get; set; }*/
     }
 }

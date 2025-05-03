@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { Router } from '@angular/router'; // 🆕
+import { Router, RouterModule } from '@angular/router'; // 🆕
 import { RegisterService } from '../services/register.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RegisterService } from '../services/register.service';
   standalone: true,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  imports: [CommonModule, ReactiveFormsModule,FormsModule]
+  imports: [CommonModule, ReactiveFormsModule,FormsModule,RouterModule]
 })
 export class RegisterComponent {
   username: string = '';

@@ -13,6 +13,6 @@ export class StudentComponent {
 
   disconnect():void {
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }

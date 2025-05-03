@@ -5,15 +5,19 @@
 }
 
 .navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-  flex-wrap: nowrap;
+  
+    position:absolute; /* sau fixed, dar să nu fie absolute dacă nu e necesar */
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* sau wrap dacă vrei mai multă flexibilitate */
+    overflow-x: hidden;
+    z-index: 10;
+  
+  
 
   .navbar-left {
     display: flex;
@@ -26,14 +30,7 @@
       flex-shrink: 0;
     }
 
-    .brand-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    
   }
 
   .navbar-right {

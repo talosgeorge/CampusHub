@@ -7,6 +7,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AngularApp1.Server.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CampusHub.Server.Controllers
 {
@@ -16,11 +18,13 @@ namespace CampusHub.Server.Controllers
     {
         private readonly UserManager<UserAccount> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly AppDbContext _context;
 
-        public AccountController(UserManager<UserAccount> userManager, IConfiguration configuration)
+        public AccountController(UserManager<UserAccount> userManager, IConfiguration configuration, AppDbContext context)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _context = context;
         }
 
         [HttpPost("login")]
@@ -33,10 +37,21 @@ namespace CampusHub.Server.Controllers
             if (user == null || !await _userManager.CheckPasswordAsync(user, model.Password))
                 return Unauthorized("Username/email sau parolă incorectă.");
 
+            var roleId = await _context.UserRoles
+               .Where(ur => ur.UserId == user.Id)
+               .Select(ur => ur.RoleId)
+               .FirstOrDefaultAsync();
+
+            var roleName = await _context.Roles
+                .Where(r => r.Id == roleId)
+                .Select(r => r.Name)
+                .FirstOrDefaultAsync();
+
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName ?? ""),
+                 new Claim(ClaimTypes.Role, roleName ?? ""),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
@@ -53,7 +68,9 @@ namespace CampusHub.Server.Controllers
             return Ok(new
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token),
-                expiration = token.ValidTo
+                expiration = token.ValidTo,
+                userId = user.Id.ToString(),
+                role = roleName
             });
         }
     }

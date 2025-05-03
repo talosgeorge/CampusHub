@@ -1,0 +1,25 @@
+<section class="registerBackground">
+  <div class="container">
+
+    <div class="registrationTitle">
+      <h1>Registration Form</h1>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Username" name="username" [(ngModel)]="username"  />
+      <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
+      <input type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" />
+    </form>
+
+    <p *ngIf="message">{{message}}</p>
+    
+    <div class="action-buttons">
+      <button class="submitRegister" (click)="register()">Register</button>
+      <button class="goToLogin" (click)="goToLogin()">Loghează-te</button>
+      
+    </div>
+    
+  </div>
+  
+</section>

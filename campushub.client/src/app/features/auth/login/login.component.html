@@ -1,0 +1,13 @@
+
+<section class="login-container">
+  <h2 >Autentificare</h2>
+  <form >
+    <input type="text" [(ngModel)]="usernameOrEmail" placeholder="Username sau Email" name="usernameOrEmail">
+    <input type="password" placeholder="Parolă" [(ngModel)]="password" name="password">
+    <button type="submit" (click)="login()" class="authButton">Loghează-te în cont</button>
+  </form>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  
+</section>
+

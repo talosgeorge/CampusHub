@@ -14,6 +14,5 @@ namespace AngularApp1.Server.Data
         public DbSet<UserDetails> userDetailSet { get; set; }
         public DbSet<Document> Documente { get; set; }
         public DbSet<TipDocument> TipuriDocumente { get; set; }
-
     }
 }

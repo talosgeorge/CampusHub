@@ -5,22 +5,21 @@
       <h1>Registration Form</h1>
     </div>
 
-    <form [formGroup]="registerForm">
-      <input type="text" placeholder="Username" formControlName="username" />
-      <input type="email" placeholder="Email" formControlName="email" />
-      <input type="password" placeholder="Password" formControlName="password" />
-      <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+    <form>
+      <input type="text" placeholder="Username" name="username" [(ngModel)]="username"  />
+      <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
+      <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
+      <input type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" />
     </form>
 
-    <div class="submitButtons">
-      <input class="textfields" type="checkbox" />
-      <label>I accept all terms & conditions</label>
-    </div>
-
+    <p *ngIf="message">{{message}}</p>
+    
     <div class="action-buttons">
-      <button class="submitRegister" (click)="onSubmit()">Register</button>
+      <button class="submitRegister" (click)="register()">Register</button>
       <button class="goToLogin" (click)="goToLogin()">Loghează-te</button>
+      
     </div>
-
+    
   </div>
+  
 </section>

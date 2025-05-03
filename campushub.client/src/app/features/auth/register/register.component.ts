@@ -1,42 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router'; // 🆕
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule,FormsModule]
 })
 export class RegisterComponent {
-  constructor(private router: Router) { }
+  username: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
+  message:string ='';
+  isClicked: boolean = false;
 
-  registerForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    confirmPassword: new FormControl('', [Validators.required])
-  });
+  router = inject(Router);
+  registerService = inject(RegisterService);
 
-  get usernameLength() {
-    return this.registerForm.controls['username'].value?.length ?? 0;
+  register():void{
+    this.isClicked = true;
+
+    if(this.username == ''){
+      this.message = "Username cannot be blank";
+    }
+    else if(this.email == ''){
+      this.message = "Email cannot be blank";
+    }
+    else if(this.password == ''){
+      this.message = "Password cannot be black";
+    }
+    else if(this.password != this.confirmPassword){
+      this.message = "Parolele nu corespund";
+    }
+    else{
+      this.registerService.register(this.username,this.email,this.password).subscribe({
+        next:(response) =>{
+          this.message = response.message;
+          
+        },
+        error:(error)=>{
+          this.message = error.error[0].code;
+          console.log(this.message);
+        }
+      })
+    }
   }
 
-  get emailLength() {
-    return this.registerForm.controls['email'].value?.length ?? 0;
-  }
 
-  get passLength() {
-    return this.registerForm.controls['password'].value?.length ?? 0;
-  }
-
-  onSubmit() {
-    console.log(this.registerForm.value);
-  }
-
-  goToLogin() {
+  goToLogin():void{
     this.router.navigate(['/login']);
   }
 }

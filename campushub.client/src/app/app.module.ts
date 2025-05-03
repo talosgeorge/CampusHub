@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { RegisterComponent } from './features/auth/register/register.component';
@@ -23,7 +22,6 @@ import { StudentComponent } from './components/student/student.component';
     LoginComponent,
     BrowserModule, 
     AppRoutingModule,
-    HeaderComponent,
     HomeComponent,
     RouterOutlet,
     RegisterComponent,

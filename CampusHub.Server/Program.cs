@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Talos: Talos\\SQLEXPRESS03
 // === Configurare conexiune DB ===
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=DESKTOP-3KFCOVV\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
+    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString)
@@ -51,10 +51,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("https://localhost:4200")
+        policy.WithOrigins("https://localhost:4200", "https://127.0.0.1:4200")
               .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowCredentials(); // dacă folosești cookie-uri / sesiuni
+              .AllowCredentials();
     });
 });
 

@@ -5,6 +5,7 @@
 }
 
 .navbar {
+<<<<<<< HEAD
   position: absolute;
   top: 0;
   width: 100%;
@@ -14,6 +15,21 @@
   align-items: center;
   z-index: 10;
   flex-wrap: nowrap;
+=======
+  
+    position:absolute; /* sau fixed, dar să nu fie absolute dacă nu e necesar */
+    width: 100%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* sau wrap dacă vrei mai multă flexibilitate */
+    overflow-x: hidden;
+    z-index: 10;
+  
+  
+>>>>>>> main
 
   .navbar-left {
     display: flex;
@@ -26,6 +42,7 @@
       flex-shrink: 0;
     }
 
+<<<<<<< HEAD
     .brand-name {
       font-size: 1.5rem;
       font-weight: 700;
@@ -34,6 +51,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+=======
+    
+>>>>>>> main
   }
 
   .navbar-right {

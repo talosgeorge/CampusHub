@@ -1,7 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { Router } from '@angular/router'; // 🆕
+=======
+import { Router, RouterModule } from '@angular/router'; // 🆕
+>>>>>>> main
 import { RegisterService } from '../services/register.service';
 
 @Component({
@@ -9,7 +13,11 @@ import { RegisterService } from '../services/register.service';
   standalone: true,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
+<<<<<<< HEAD
   imports: [CommonModule, ReactiveFormsModule,FormsModule]
+=======
+  imports: [CommonModule, ReactiveFormsModule,FormsModule,RouterModule]
+>>>>>>> main
 })
 export class RegisterComponent {
   username: string = '';
@@ -18,6 +26,10 @@ export class RegisterComponent {
   confirmPassword: string = '';
   message:string ='';
   isClicked: boolean = false;
+<<<<<<< HEAD
+=======
+  isLoggedInAsStudent:boolean = false;
+>>>>>>> main
 
   router = inject(Router);
   registerService = inject(RegisterService);
@@ -55,4 +67,23 @@ export class RegisterComponent {
   goToLogin():void{
     this.router.navigate(['/login']);
   }
+<<<<<<< HEAD
+=======
+
+  ngOnInit(){
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if(token && role == 'student'){
+      this.isLoggedInAsStudent = true;
+    }
+    else {
+      this.isLoggedInAsStudent = false;
+    }
+
+    if(this.isLoggedInAsStudent){
+      this.router.navigate(['/students']);
+    }
+  }
+>>>>>>> main
 }

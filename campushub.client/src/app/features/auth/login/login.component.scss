@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .login-container {
   width: 100%;
   max-width: 400px;
@@ -55,3 +56,135 @@
   text-align: center;
   margin-top: 10px;
 }
+=======
+.nav-btn{
+  text-align: right;
+  
+  color:red;
+  cursor: pointer;
+  width: 30px;
+  margin-left: auto;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover{
+    color:black;
+  }
+}
+
+
+.login-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-image img {
+  width: 300px;
+  margin-right: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.login-title {
+  font-size: 24px;
+  color: #2C2C2C;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #2C2C2C;
+  padding-bottom: 5px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.input-group .icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+}
+
+.authButton {
+  background-color: #FF3B3F;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.authButton:hover {
+  background-color: #fb2024;
+}
+
+.back-button {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+
+  
+  .login-content {
+    flex-direction: column;
+    align-items: center;
+    
+    
+  }
+
+  .login-image img {
+    margin: 0 0 1rem 0;
+    width: 250px;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .login-title {
+    text-align: center;
+  }
+}
+>>>>>>> main

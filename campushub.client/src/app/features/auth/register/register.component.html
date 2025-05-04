@@ -1,8 +1,14 @@
 <section class="registerBackground">
   <div class="container">
+<<<<<<< HEAD
 
     <div class="registrationTitle">
       <h1>Registration Form</h1>
+=======
+    <div class="registrationTitle">
+      <h1>Registration Form</h1>
+      
+>>>>>>> main
     </div>
 
     <form>
@@ -12,6 +18,7 @@
       <input type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" />
     </form>
 
+<<<<<<< HEAD
     <p *ngIf="message">{{message}}</p>
     
     <div class="action-buttons">
@@ -20,6 +27,15 @@
       
     </div>
     
+=======
+    
+    
+    <div class="action-buttons">
+      <button class="submitRegister" (click)="register()">Register</button>
+    </div>
+    <h4 class="accountMessage">You have an account? <span><a routerLink="/login">Login now!</a></span></h4>
+    <p *ngIf="message">{{message}}</p>
+>>>>>>> main
   </div>
   
 </section>

@@ -1,10 +1,35 @@
-* {
-  margin-top: 120px;
+p{
+  color:red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+.accountMessage{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  
+ 
+ 
+
+  span{
+    cursor: pointer;
+    a{
+      color:black;
+      text-decoration: none;
+    }
+    &:hover{
+      color:red;
+    }
+    
+    
+  }
 }
 
 .registerBackground {
   width: 100%;
-  height: 650px;
+  height: 100vh;
   background-color: lightgray;
   display: flex;
 }
@@ -14,7 +39,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  margin-top: 40px;
+  margin-top: 12vh;
   display: flex;
   flex-direction: column;
   max-height: 520px;
@@ -31,9 +56,10 @@
 
   h1 {
     color: black;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 31px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
   }
 
   p {
@@ -70,14 +96,6 @@ form {
   font-family: 'Times New Roman', Times, serif;
   margin-top: 20px;
 
-  input[type="checkbox"] {
-    margin-top: 0px;
-    margin-right: 15px;
-    margin-left: 40px;
-    height: 18px;
-    width: 18px;
-    cursor: pointer;
-  }
 
   label {
     font-size: 18px;
@@ -103,23 +121,14 @@ form {
     background-color: rgb(12, 153, 241);
     color: white;
     border: none;
-
+    margin-top: 0;
+    width: 80%;
     &:hover {
       background-color: rgb(4, 84, 133);
     }
   }
 
-  .goToLogin {
-    background-color: transparent;
-    color: rgb(12, 153, 241);
-    border: 2px solid rgb(12, 153, 241);
-    transition: background-color 0.3s, color 0.3s;
-
-    &:hover {
-      background-color: rgb(12, 153, 241);
-      color: white;
-    }
-  }
+  
 }
 
 @media (max-width: 768px) {

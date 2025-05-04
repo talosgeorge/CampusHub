@@ -1,13 +1,29 @@
 
-<section class="login-container">
-  <h2 >Autentificare</h2>
-  <form >
-    <input type="text" [(ngModel)]="usernameOrEmail" placeholder="Username sau Email" name="usernameOrEmail">
-    <input type="password" placeholder="Parolă" [(ngModel)]="password" name="password">
-    <button type="submit" (click)="login()" class="authButton">Loghează-te în cont</button>
-  </form>
-  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
 
-  
+<section class="login-wrapper">
+  <div class="login-content">
+    <div class="login-image">
+      <img src="assets/images/loginImagine.png" alt="Students" />
+    </div>
+
+    <div class="login-form">
+      <a routerLink="/" class="nav-btn">BACK</a>
+      <h2 class="login-title">LOGIN</h2>
+      <form>
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" [(ngModel)]="usernameOrEmail" placeholder="Username or Email" name="usernameOrEmail">
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" [(ngModel)]="password" placeholder="Password" name="password">
+        </div>
+
+        <button type="submit" (click)="login()" class="authButton">Login</button>
+      </form>
+
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </div>
+  </div>
 </section>
-

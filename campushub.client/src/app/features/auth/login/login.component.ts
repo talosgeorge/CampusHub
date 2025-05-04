@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import {  FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 import { LoginService } from '../services/login.service';
 
@@ -10,7 +10,7 @@ import { LoginService } from '../services/login.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [NgIf,FormsModule,CommonModule]
+  imports: [NgIf,FormsModule,CommonModule,RouterModule]
 })
 
 export class LoginComponent {
@@ -19,6 +19,7 @@ export class LoginComponent {
   usernameOrEmail:string = '';
   password:string = '';
   isConnected:boolean = false;
+  isLoggedInAsStudent:boolean = false;
 
 
   loginService = inject(LoginService);
@@ -29,7 +30,11 @@ export class LoginComponent {
     this.loginService.login(this.usernameOrEmail,this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/students']);
+        localStorage.setItem('userId',res.userId);
+        localStorage.setItem('userRole',res.role);
+        this.router.navigateByUrl('/students').then(() => {
+          window.location.reload();
+        });
         this.isConnected = true;
         this.errorMessage = '';
       },
@@ -41,5 +46,22 @@ export class LoginComponent {
       }
     });
   } 
+
+  ngOnInit(){ // Verific daca sunt logat
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if(token && role == 'student'){
+      this.isLoggedInAsStudent = true;
+    }
+    else{
+      this.isLoggedInAsStudent = false;
+    }
+
+    if(this.isLoggedInAsStudent){
+      this.router.navigate(['/students']);
+    }
+    
+  }
 
 }

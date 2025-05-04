@@ -10,9 +10,10 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 // Simi: DESKTOP-3KFCOVV\SQLEXPRESS
 // Talos: Talos\\SQLEXPRESS03
+// Chio: DESKTOP-SH9UD67\SQLEXPRESS
 // === Configurare conexiune DB ===
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=DESKTOP-3KFCOVV\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
+    ?? "Data Source=DESKTOP-SH9UD67\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString)

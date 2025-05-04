@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {}
+    "C:\\faculta\\II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {}
   },
   "projects": {
-    "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {
+    "C:\\faculta\\II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+        "projectUniqueName": "C:\\faculta\\II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
         "projectName": "CampusHub.Server",
-        "projectPath": "D:\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
-        "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-        "outputPath": "D:\\CampusHub\\CampusHub.Server\\obj\\",
+        "projectPath": "C:\\faculta\\II\\CampusHub\\CampusHub.Server\\CampusHub.Server.csproj",
+        "packagesPath": "C:\\Users\\raulg\\.nuget\\packages\\",
+        "outputPath": "C:\\faculta\\II\\CampusHub\\CampusHub.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VS CVA\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\raulg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -99,6 +104,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -107,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

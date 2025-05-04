@@ -18,6 +18,7 @@ export class RegisterComponent {
   confirmPassword: string = '';
   message:string ='';
   isClicked: boolean = false;
+  isLoggedInAsStudent:boolean = false;
 
   router = inject(Router);
   registerService = inject(RegisterService);
@@ -54,5 +55,21 @@ export class RegisterComponent {
 
   goToLogin():void{
     this.router.navigate(['/login']);
+  }
+
+  ngOnInit(){
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if(token && role == 'student'){
+      this.isLoggedInAsStudent = true;
+    }
+    else {
+      this.isLoggedInAsStudent = false;
+    }
+
+    if(this.isLoggedInAsStudent){
+      this.router.navigate(['/students']);
+    }
   }
 }

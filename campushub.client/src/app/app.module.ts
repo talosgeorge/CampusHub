@@ -11,10 +11,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './features/auth/login/login.component';
 import { CommonModule } from '@angular/common';
 import { StudentComponent } from './components/student/student.component';
+import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    StudentNavBarComponent,
     
   ],
   imports: [

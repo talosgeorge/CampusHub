@@ -19,6 +19,7 @@ export class LoginComponent {
   usernameOrEmail:string = '';
   password:string = '';
   isConnected:boolean = false;
+  isLoggedInAsStudent:boolean = false;
 
 
   loginService = inject(LoginService);
@@ -31,7 +32,9 @@ export class LoginComponent {
         localStorage.setItem('token', res.token);
         localStorage.setItem('userId',res.userId);
         localStorage.setItem('userRole',res.role);
-        this.router.navigate(['/students']);
+        this.router.navigateByUrl('/students').then(() => {
+          window.location.reload();
+        });
         this.isConnected = true;
         this.errorMessage = '';
       },
@@ -43,5 +46,22 @@ export class LoginComponent {
       }
     });
   } 
+
+  ngOnInit(){ // Verific daca sunt logat
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if(token && role == 'student'){
+      this.isLoggedInAsStudent = true;
+    }
+    else{
+      this.isLoggedInAsStudent = false;
+    }
+
+    if(this.isLoggedInAsStudent){
+      this.router.navigate(['/students']);
+    }
+    
+  }
 
 }

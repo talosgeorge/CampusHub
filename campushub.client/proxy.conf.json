@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://localhost:7284", //aici trebuie modificat pt fiecare din echipa cu portul lui (Port Talos: 7284)
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

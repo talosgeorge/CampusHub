@@ -29,6 +29,14 @@ builder.Services.AddIdentity<UserAccount, IdentityRole>(options =>
 .AddDefaultTokenProviders();
 
 // === JWT Authentication ===
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401; // Unauthorized
+        return Task.CompletedTask;
+    };
+});
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
 {

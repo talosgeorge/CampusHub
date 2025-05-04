@@ -1,36 +1,111 @@
-.documents-page {
-  padding: 60px 20px;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@400;600;700&display=swap');
 
-  h1 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
+:host {
+  display: block;
+  padding: 40px 20px;
+  font-family: 'K2D', sans-serif;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+}
 
-  .upload-btn {
-    background-color: #3b82f6;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
+.documents-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 100px 40px 40px 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 1.8rem;
     font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    color: #1f1147;
   }
 
-  .document-list {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
 
-    ul {
-      list-style: none;
-      padding: 0;
+    label {
+      font-weight: 600;
+      color: #333;
+    }
 
-      li {
-        padding: 12px 0;
-        border-bottom: 1px solid #ccc;
+    select,
+    input[type="text"],
+    input[type="file"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      align-self: flex-start;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      background-color: #3b82f6;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #2563eb;
       }
+
+      &:disabled {
+        background-color: #a5b4fc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      background: #f9fafb;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+      strong {
+        color: #111827;
+        font-weight: 600;
+      }
+
+      small {
+        color: #6b7280;
+      }
+    }
+  }
+
+  p {
+    color: #6b7280;
+  }
+}
+
+@media (max-width: 600px) {
+  .documents-wrapper {
+    padding: 20px;
+  }
+
+  form {
+    button {
+      width: 100%;
     }
   }
 }

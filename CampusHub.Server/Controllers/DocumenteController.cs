@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CampusHub.Server.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/documente")]
     public class DocumenteController : ControllerBase
@@ -25,12 +25,56 @@ namespace CampusHub.Server.Controllers
             _env = env;
         }
 
+        [HttpGet("user")]
+        public IActionResult GetUserDocuments()
+        {
+            try
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                var documents = _context.Documente
+                    .Where(d => d.UserId == userId)
+                    .Select(d => new
+                    {
+                        d.Id,
+                        d.FileName,
+                        d.Descriere,
+                        TipDocumentNume = d.TipDocument.Nume,
+                        DataUpload = d.DataUpload.ToString("yyyy-MM-dd")
+                    })
+                    .ToList();
+
+                return Ok(documents);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Eroare la extragerea documentelor: {ex.Message}");
+            }
+        }
+
+        [HttpGet("tipuri")]
+        public IActionResult GetTipuriDocumente()
+        {
+            try
+            {
+                var tipuri = _context.TipuriDocumente
+                    .Select(t => new { t.Id, t.Nume })
+                    .ToList();
+
+                return Ok(tipuri);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Eroare la extragerea tipurilor: {ex.Message}");
+            }
+        }
+
         [HttpPost("upload")]
         public async Task<IActionResult> Upload([FromForm] DocumentUploadDto dto)
         {
             try
             {
-                var userId = "b17bcce2-1cf3-45e6-9f1f-6bab6a6d51e2"; // temporar hardcoded, ca să nu folosești JWT
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 if (dto.File == null || dto.File.Length == 0)
                     return BadRequest("Fișierul este invalid.");

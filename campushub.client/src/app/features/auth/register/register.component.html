@@ -1,24 +1,30 @@
-<section class="registerBackground">
-  <div class="container">
-    <div class="registrationTitle">
-      <h1>Registration Form</h1>
+<section class="registerWrapper">
+  <div class="registerCard">
+
+    <div class="leftSide">
       
     </div>
 
-    <form>
-      <input type="text" placeholder="Username" name="username" [(ngModel)]="username"  />
-      <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
-      <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
-      <input type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" />
-    </form>
+    <div class="rightSide">
+      <a routerLink="/" class="backButton">BACK</a>
+      <div class="registrationTitle">
+        <h1>Registration Form</h1>
+      </div>
 
-    
-    
-    <div class="action-buttons">
-      <button class="submitRegister" (click)="register()">Register</button>
+      <form>
+        <input type="text" placeholder="Username" name="username" [(ngModel)]="username" />
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="email" />
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="password" />
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" />
+      </form>
+
+      <div class="action-buttons">
+        <button class="submitRegister" (click)="register()">Register</button>
+      </div>
+
+      <h4 class="accountMessage">You have an account? <span><a routerLink="/login">Login now!</a></span></h4>
+      <p *ngIf="message">{{message}}</p>
     </div>
-    <h4 class="accountMessage">You have an account? <span><a routerLink="/login">Login now!</a></span></h4>
-    <p *ngIf="message">{{message}}</p>
+
   </div>
-  
 </section>

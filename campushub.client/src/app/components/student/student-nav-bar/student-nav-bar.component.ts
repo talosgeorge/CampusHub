@@ -1,15 +1,22 @@
+import { NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-student-nav-bar',
-  standalone: false,
+  standalone: true,
   templateUrl: './student-nav-bar.component.html',
-  styleUrl: './student-nav-bar.component.scss'
+  styleUrl: './student-nav-bar.component.scss',
+  imports:[RouterModule,NgIf]
 })
 export class StudentNavBarComponent {
 
   router = inject(Router);
+  dropDownOpen:boolean = false;
+
+  toggleDropDown(){
+    this.dropDownOpen = !this.dropDownOpen;
+  }
 
   disconnect():void{
     localStorage.clear();

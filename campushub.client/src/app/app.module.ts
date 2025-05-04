@@ -17,20 +17,21 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
 @NgModule({
   declarations: [
     AppComponent,
-    StudentNavBarComponent,
+    
     
   ],
   imports: [
     HttpClientModule,
     LoginComponent,
-    BrowserModule, 
+    BrowserModule,
     AppRoutingModule,
     HomeComponent,
     RouterOutlet,
     RegisterComponent,
     ReactiveFormsModule,
     StudentComponent,
-  ],
+    StudentNavBarComponent
+],
   providers: [],
   bootstrap: [AppComponent]
 })

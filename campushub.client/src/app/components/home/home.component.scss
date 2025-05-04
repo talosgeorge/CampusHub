@@ -1,15 +1,214 @@
-section{
-    width: 100%;
-    height: 650px;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/background.jpg');
-    background-position: center;
-    background-size: cover;
-    margin-top: 120px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:host {
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (max-width: 768px){
-    section{
-        background-size: cover;
-        background-position: center;
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  flex-wrap: nowrap;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+
+    img {
+      height: 80px;
+      margin-right: 10px;
+      flex-shrink: 0;
     }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .navbar-right {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+
+    .nav-btn {
+      padding: 8px 16px;
+      border: 2px solid white;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: white;
+        color: #1f1147;
+      }
+    }
+  }
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-right {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+
+.hero-section {
+  position: relative;
+  background-image: url('/assets/images/backgroundLandingPage.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .btn-primary {
+      padding: 12px 25px;
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+}
+
+.features-section {
+  background-color: #ffffff;
+  padding: 80px 40px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #1f1147;
+  }
+
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .feature-card {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 220px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+}
+
+.cta {
+  background: #3b82f6;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    background-color: #fff;
+    color: #3b82f6;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+.footer {
+  background: #f9fafb;
+  padding: 25px;
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
 }

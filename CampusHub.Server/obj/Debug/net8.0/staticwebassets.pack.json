@@ -1,20 +1,16 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "Id": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
       "PackagePath": "staticwebassets\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf"
     },
     {
-      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
+      "Id": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
       "PackagePath": "staticwebassets\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf"
     },
     {
-      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf",
+      "Id": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf",
       "PackagePath": "staticwebassets\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssets.props",

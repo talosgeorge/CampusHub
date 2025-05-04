@@ -1,0 +1,101 @@
+<div class="user-details-container">
+  <h2>Detalii Personale</h2>
+
+  <form *ngIf="!isLoading" [formGroup]="detailsForm" (ngSubmit)="onSubmit()">
+    <!-- Secțiune Date Personale -->
+    <div class="form-section">
+      <h3>Date Personale</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nume">Nume</label>
+          <input type="text" id="nume" formControlName="nume" class="form-control">
+          <div *ngIf="detailsForm.get('nume')?.errors?.['required']" class="error-message">
+            Numele este obligatoriu
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prenume">Prenume</label>
+          <input type="text" id="prenume" formControlName="prenume" class="form-control">
+          <div *ngIf="detailsForm.get('prenume')?.errors?.['required']" class="error-message">
+            Prenumele este obligatoriu
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cnp">CNP</label>
+          <input type="text" id="cnp" formControlName="cnp" class="form-control" maxlength="13">
+          <div *ngIf="detailsForm.get('cnp')?.errors?.['required']" class="error-message">
+            CNP-ul este obligatoriu
+          </div>
+          <div *ngIf="detailsForm.get('cnp')?.errors?.['minlength']" class="error-message">
+            CNP-ul trebuie să aibă 13 caractere
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dataNasterii">Data Nașterii</label>
+          <input type="date" id="dataNasterii" formControlName="dataNasterii" class="form-control">
+          <div *ngIf="detailsForm.get('dataNasterii')?.errors?.['required']" class="error-message">
+            Data nașterii este obligatorie
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secțiune Date Academice -->
+    <div class="form-section">
+      <h3>Date Academice</h3>
+
+      <div class="form-group">
+        <label for="nrMatricol">Număr Matricol</label>
+        <input type="text" id="nrMatricol" formControlName="nrMatricol" class="form-control">
+        <div *ngIf="detailsForm.get('nrMatricol')?.errors?.['required']" class="error-message">
+          Numărul matricol este obligatoriu
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="facultate">Facultate</label>
+        <select id="facultate" formControlName="facultate" class="form-control">
+          <option value="">Selectați facultatea</option>
+          <option value="Informatică">Informatică</option>
+          <option value="Matematică">Matematică</option>
+          <option value="Drept">Drept</option>
+        </select>
+        <div *ngIf="detailsForm.get('facultate')?.errors?.['required']" class="error-message">
+          Facultatea este obligatorie
+        </div>
+      </div>
+    </div>
+
+    <!-- Secțiune Date Contact -->
+    <div class="form-section">
+      <h3>Date de Contact</h3>
+
+      <div class="form-group">
+        <label for="adresa">Adresă</label>
+        <textarea id="adresa" formControlName="adresa" class="form-control" rows="3"></textarea>
+        <div *ngIf="detailsForm.get('adresa')?.errors?.['required']" class="error-message">
+          Adresa este obligatorie
+        </div>
+      </div>
+    </div>
+
+    <!-- Butoane -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="detailsForm.invalid">
+        Salvează Modificările
+      </button>
+    </div>
+  </form>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Se încarcă...</p>
+  </div>
+</div>

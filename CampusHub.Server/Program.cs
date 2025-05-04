@@ -1,5 +1,5 @@
-﻿using AngularApp1.Server.Data;
-using AngularApp1.Server.Models;
+﻿using CampusHub.Server.Data;
+using CampusHub.Server.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

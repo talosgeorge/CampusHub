@@ -1,8 +1,13 @@
-﻿namespace AngularApp1.Server.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CampusHub.Server.Models
 {
     public class UserDetails
     {
         public int id { get; set; }
+        public string UserId { get; set; }
+        public virtual UserAccount User { get; set; }
+         [StringLength(13)]
         public string cnp { get; set; }
         public string nrMatricol { get; set; }
         public string facultate { get; set; }

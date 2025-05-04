@@ -20,11 +20,15 @@ const routes: Routes = [
       import('./features/auth/login/login.component').then(m => m.LoginComponent)
   },
 
-  
   {
     path: 'students',
     loadComponent: () =>
       import('./components/student/student.component').then(m => m.StudentComponent)
+  },
+  {
+    path: 'students/details',
+    loadComponent: () =>
+      import('./features/details/user-details.component').then(m => m.UserDetailsComponent)
   }
 ];
 

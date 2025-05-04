@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using CampusHub.Server.Models;
-using AngularApp1.Server.Models;
+using CampusHub.Server.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CampusHub.Server.Controllers

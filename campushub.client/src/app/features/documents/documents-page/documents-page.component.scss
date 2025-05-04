@@ -1,0 +1,36 @@
+.documents-page {
+  padding: 60px 20px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  .upload-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 40px;
+  }
+
+  .document-list {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 12px 0;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}

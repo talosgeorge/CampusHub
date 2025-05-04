@@ -1,0 +1,13 @@
+<div class="documents-wrapper">
+  <h2>Your uploaded documents</h2>
+
+  <p *ngIf="documents.length === 0">No documents uploaded yet.</p>
+
+  <ul *ngIf="documents.length > 0">
+    <li *ngFor="let doc of documents">
+      <strong>{{ doc.fileName }}</strong> — {{ doc.descriere }} ({{ doc.tipDocumentNume }})
+      <br />
+      <small>{{ doc.dataUpload }}</small>
+    </li>
+  </ul>
+</div>

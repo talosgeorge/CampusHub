@@ -32,48 +32,43 @@
     }
 }
 
-.buttonContainer{
-    margin-left: auto;
-    margin-right: auto;
-   
-    width: 90%;
+.buttonContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 
-    .leftButton{
-        text-decoration: none;
-        
-        button{
-            width: 40%;
-            height: 50px;
-            border-radius: 20px;
-            color:#fff;
-            background-color: #FF3B3F;
-            border: 1px solid #FF3B3F;
-            font-size: 20px;
-            cursor: pointer;
-            margin-right: 10px;
-            &:hover{
-                background-color: #f50a0e;
-            }
-        }
-        
+  .leftButton {
+    color: #fff;
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #FF3B3F;
+    border: 1px solid #FF3B3F;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-align: center;
+
+    &:hover {
+      background-color: #f50a0e;
     }
-    .rightButton{
-        text-decoration: none;
-        
-        button{
-            color:#fff;
-            width: 40%;
-            height: 50px;
-            border-radius: 20px;
-            text-align: center;
-            background-color: black;
-            font-size: 20px;
-            cursor: pointer;
-            
-            &:hover{
-                background-color: #242121;
-            }
-        }
-        
+  }
+
+  .rightButton {
+    color: #fff;
+    width: 40%;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+
+    &:hover {
+      background-color: #242121;
     }
+  }
 }
+

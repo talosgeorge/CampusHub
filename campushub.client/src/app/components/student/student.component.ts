@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-student',
   standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './student.component.html',
   styleUrl: './student.component.scss',
 })

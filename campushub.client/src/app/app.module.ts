@@ -12,6 +12,8 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { CommonModule } from '@angular/common';
 import { StudentComponent } from './components/student/student.component';
 import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
+import { DocumentsPageComponent } from './features/documents/documents-page/documents-page.component';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
     RegisterComponent,
     ReactiveFormsModule,
     StudentComponent,
-    StudentNavBarComponent
+    StudentNavBarComponent,
+    DocumentsPageComponent
 ],
   providers: [],
   bootstrap: [AppComponent]

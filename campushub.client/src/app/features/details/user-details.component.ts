@@ -4,14 +4,21 @@ import {
   ReactiveFormsModule,
   FormBuilder,
   FormGroup,
-  Validators
+  Validators,
+  FormsModule
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSnackBarModule
+  ],
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
@@ -22,7 +29,8 @@ export class UserDetailsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.detailsForm = this.fb.group({
       cnp: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13)]],
@@ -49,31 +57,75 @@ export class UserDetailsComponent implements OnInit {
 
   loadUserDetails(): void {
     this.isLoading = true;
-    this.http.get('/api/userdetails/my').subscribe({
+    this.http.get('https://localhost:7284/api/userdetails/my').subscribe({
       next: (data: any) => {
-        this.detailsForm.patchValue(data);
+        const formattedData = {
+          ...data,
+          dataNasterii: this.convertToInputDate(data.dataNasterii)
+        };
+        this.detailsForm.patchValue(formattedData);
         this.isLoading = false;
       },
       error: (err) => {
         console.error('Error loading details', err);
         this.isLoading = false;
+        this.showError('Eroare la încărcarea detaliilor');
       }
     });
   }
 
   onSubmit(): void {
+    console.log('Form submitted', this.detailsForm.value);
+    console.log('Form valid:', this.detailsForm.valid);
+
     if (this.detailsForm.valid) {
       this.isLoading = true;
-      this.http.post('/api/userdetails', this.detailsForm.value).subscribe({
-        next: () => {
+
+      const formData = {
+        ...this.detailsForm.value,
+        dataNasterii: new Date(this.detailsForm.value.dataNasterii).toISOString()
+      };
+
+      console.log('Data being sent:', formData);
+
+      this.http.post('https://localhost:7284/api/userdetails', formData).subscribe({
+        next: (response) => {
+          console.log('Save successful', response);
           this.isLoading = false;
-          this.router.navigate(['/profile']);
+          this.snackBar.open('Saved successfully!', 'Close', { duration: 3000 });
+          this.router.navigate(['/students']);
         },
         error: (err) => {
-          console.error('Error saving details', err);
+          console.error('Save error:', err);
           this.isLoading = false;
+          this.snackBar.open(
+            `Error: ${err.error?.Message || err.message}`,
+            'Close',
+            { duration: 5000 }
+          );
         }
       });
+    } else {
+      console.log('Form invalid, errors:', this.detailsForm.errors);
+      this.markAllAsTouched();
     }
+  }
+
+  private convertToInputDate(backendDate: string): string {
+    if (!backendDate) return '';
+    return backendDate.split('T')[0];
+  }
+
+  private showError(message: string): void {
+    this.snackBar.open(message, 'Închide', {
+      duration: 5000,
+      panelClass: ['error-snackbar']
+    });
+  }
+
+  private markAllAsTouched(): void {
+    Object.values(this.detailsForm.controls).forEach(control => {
+      control.markAsTouched();
+    });
   }
 }

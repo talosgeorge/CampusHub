@@ -11,7 +11,7 @@ namespace CampusHub.Server.Models
         public string cnp { get; set; }
         public string nrMatricol { get; set; }
         public string facultate { get; set; }
-        public string dataNasterii { get; set; }
+        public DateTime dataNasterii { get; set; }
         public string nume { get; set; }
         public string prenume { get; set; }
         public string prenumeTata { get; set; }

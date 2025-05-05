@@ -15,7 +15,9 @@ namespace CampusHub.Server.DTOs
         public string Facultate { get; set; }
 
         [Required]
-        public string DataNasterii { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
+        public DateTime DataNasterii { get; set; }
 
         [Required]
         public string Nume { get; set; }

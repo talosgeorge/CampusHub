@@ -30,40 +30,54 @@ namespace CampusHub.Server.Controllers
         }
 
         [HttpGet("my")]
-        public async Task<ActionResult<UserDetails>> GetMyDetails()
+        public async Task<ActionResult<UserDetailsDto>> GetMyDetails()
         {
             try
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 if (string.IsNullOrEmpty(userId))
-                    return Unauthorized();
+                    return Unauthorized(new { Message = "User not authenticated" });
 
                 var details = await _context.UserDetails
-                    .Include(ud => ud.User)
                     .FirstOrDefaultAsync(ud => ud.UserId == userId);
 
-                return details == null ? NotFound() : Ok(details);
+                if (details == null)
+                    return NotFound(new { Message = "User details not found" });
+
+                return Ok(MapToDto(details));
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error fetching user details");
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, new
+                {
+                    Message = "Internal server error",
+                    Error = ex.Message
+                });
             }
         }
 
-        
         [HttpPost]
         public async Task<IActionResult> UpsertDetails([FromBody] UserDetailsDto dto)
         {
             try
             {
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
+                    return BadRequest(new
+                    {
+                        Message = "Invalid data",
+                        Errors = ModelState.Values.SelectMany(v => v.Errors)
+                    });
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (string.IsNullOrEmpty(userId))
-                    return Unauthorized();
+                    return Unauthorized(new { Message = "User not authenticated" });
+
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                    return NotFound(new { Message = "User not found" });
+
+                var dataNasterii = dto.DataNasterii; 
 
                 var existingDetails = await _context.UserDetails
                     .FirstOrDefaultAsync(ud => ud.UserId == userId);
@@ -76,7 +90,7 @@ namespace CampusHub.Server.Controllers
                         cnp = dto.Cnp,
                         nrMatricol = dto.NrMatricol,
                         facultate = dto.Facultate,
-                        dataNasterii = dto.DataNasterii,
+                        dataNasterii = dataNasterii,
                         nume = dto.Nume,
                         prenume = dto.Prenume,
                         prenumeTata = dto.PrenumeTata,
@@ -90,14 +104,14 @@ namespace CampusHub.Server.Controllers
                         adresa = dto.Adresa
                     };
 
-                    _context.UserDetails.Add(newDetails);
+                    await _context.UserDetails.AddAsync(newDetails);
                 }
                 else
                 {
                     existingDetails.cnp = dto.Cnp;
                     existingDetails.nrMatricol = dto.NrMatricol;
                     existingDetails.facultate = dto.Facultate;
-                    existingDetails.dataNasterii = dto.DataNasterii;
+                    existingDetails.dataNasterii = dataNasterii;
                     existingDetails.nume = dto.Nume;
                     existingDetails.prenume = dto.Prenume;
                     existingDetails.prenumeTata = dto.PrenumeTata;
@@ -109,17 +123,57 @@ namespace CampusHub.Server.Controllers
                     existingDetails.seriaBuletin = dto.SeriaBuletin;
                     existingDetails.numarBuletin = dto.NumarBuletin;
                     existingDetails.adresa = dto.Adresa;
+
+                    _context.UserDetails.Update(existingDetails);
                 }
 
                 await _context.SaveChangesAsync();
-                return NoContent();
+
+                var updatedDetails = await _context.UserDetails
+                    .FirstOrDefaultAsync(ud => ud.UserId == userId);
+
+                return Ok(MapToDto(updatedDetails));
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "Database error while saving user details");
+                return StatusCode(500, new
+                {
+                    Message = "Database save failed",
+                    Error = ex.InnerException?.Message ?? ex.Message
+                });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error saving user details");
-                return StatusCode(500, "Internal server error");
+                _logger.LogError(ex, "Unexpected error while saving user details");
+                return StatusCode(500, new
+                {
+                    Message = "Internal server error",
+                    Error = ex.Message
+                });
             }
         }
 
+        private UserDetailsDto MapToDto(UserDetails details)
+        {
+            return new UserDetailsDto
+            {
+                Cnp = details.cnp,
+                NrMatricol = details.nrMatricol,
+                Facultate = details.facultate,
+                DataNasterii = details.dataNasterii,
+                Nume = details.nume,
+                Prenume = details.prenume,
+                PrenumeTata = details.prenumeTata,
+                PrenumeMama = details.prenumeMama,
+                Sex = details.sex,
+                JudetulNasterii = details.judetulNasterii,
+                LocalitateaNasterii = details.localitateaNasterii,
+                Nationalitate = details.nationalitate,
+                SeriaBuletin = details.seriaBuletin,
+                NumarBuletin = details.numarBuletin,
+                Adresa = details.adresa
+            };
+        }
     }
 }

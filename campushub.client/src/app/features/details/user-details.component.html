@@ -26,6 +26,18 @@
 
       <div class="form-row">
         <div class="form-group">
+          <label for="prenumeTata">Prenume Tată</label>
+          <input type="text" id="prenumeTata" formControlName="prenumeTata" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="prenumeMama">Prenume Mamă</label>
+          <input type="text" id="prenumeMama" formControlName="prenumeMama" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
           <label for="cnp">CNP</label>
           <input type="text" id="cnp" formControlName="cnp" class="form-control" maxlength="13">
           <div *ngIf="detailsForm.get('cnp')?.errors?.['required']" class="error-message">
@@ -44,30 +56,97 @@
           </div>
         </div>
       </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="sex">Sex</label>
+          <select id="sex" formControlName="sex" class="form-control">
+            <option value="">Selectați sexul</option>
+            <option value="Masculin">Masculin</option>
+            <option value="Feminin">Feminin</option>
+          </select>
+          <div *ngIf="detailsForm.get('sex')?.errors?.['required']" class="error-message">
+            Sexul este obligatoriu
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nationalitate">Naționalitate</label>
+          <input type="text" id="nationalitate" formControlName="nationalitate" class="form-control">
+          <div *ngIf="detailsForm.get('nationalitate')?.errors?.['required']" class="error-message">
+            Naționalitatea este obligatorie
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secțiune Date Identificare -->
+    <div class="form-section">
+      <h3>Date Identificare</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="seriaBuletin">Seria Buletin</label>
+          <input type="text" id="seriaBuletin" formControlName="seriaBuletin" class="form-control">
+          <div *ngIf="detailsForm.get('seriaBuletin')?.errors?.['required']" class="error-message">
+            Seria buletinului este obligatorie
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="numarBuletin">Număr Buletin</label>
+          <input type="text" id="numarBuletin" formControlName="numarBuletin" class="form-control">
+          <div *ngIf="detailsForm.get('numarBuletin')?.errors?.['required']" class="error-message">
+            Numărul buletinului este obligatoriu
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="judetulNasterii">Județul Nașterii</label>
+          <input type="text" id="judetulNasterii" formControlName="judetulNasterii" class="form-control">
+          <div *ngIf="detailsForm.get('judetulNasterii')?.errors?.['required']" class="error-message">
+            Județul nașterii este obligatoriu
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="localitateaNasterii">Localitatea Nașterii</label>
+          <input type="text" id="localitateaNasterii" formControlName="localitateaNasterii" class="form-control">
+          <div *ngIf="detailsForm.get('localitateaNasterii')?.errors?.['required']" class="error-message">
+            Localitatea nașterii este obligatorie
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Secțiune Date Academice -->
     <div class="form-section">
       <h3>Date Academice</h3>
 
-      <div class="form-group">
-        <label for="nrMatricol">Număr Matricol</label>
-        <input type="text" id="nrMatricol" formControlName="nrMatricol" class="form-control">
-        <div *ngIf="detailsForm.get('nrMatricol')?.errors?.['required']" class="error-message">
-          Numărul matricol este obligatoriu
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nrMatricol">Număr Matricol</label>
+          <input type="text" id="nrMatricol" formControlName="nrMatricol" class="form-control">
+          <div *ngIf="detailsForm.get('nrMatricol')?.errors?.['required']" class="error-message">
+            Numărul matricol este obligatoriu
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="facultate">Facultate</label>
-        <select id="facultate" formControlName="facultate" class="form-control">
-          <option value="">Selectați facultatea</option>
-          <option value="Informatică">Informatică</option>
-          <option value="Matematică">Matematică</option>
-          <option value="Drept">Drept</option>
-        </select>
-        <div *ngIf="detailsForm.get('facultate')?.errors?.['required']" class="error-message">
-          Facultatea este obligatorie
+        <div class="form-group">
+          <label for="facultate">Facultate</label>
+          <select id="facultate" formControlName="facultate" class="form-control">
+            <option value="">Selectați facultatea</option>
+            <option value="Automatica si Calculatoare">Automatica si Calculatoare</option>
+            <option value="Constructii">Constructii</option>
+            <option value="Electronică, Telecomunicații și Tehnologia Informației">Electronică, Telecomunicații și Tehnologia Informației</option>
+            <option value="Medicină">Medicină</option>
+            <option value="Științe Economice">Științe Economice</option>
+          </select>
+          <div *ngIf="detailsForm.get('facultate')?.errors?.['required']" class="error-message">
+            Facultatea este obligatorie
+          </div>
         </div>
       </div>
     </div>
@@ -87,8 +166,9 @@
 
     <!-- Butoane -->
     <div class="form-actions">
-      <button type="submit" class="btn btn-primary" [disabled]="detailsForm.invalid">
-        Salvează Modificările
+      <button type="submit" class="btn btn-primary" [disabled]="detailsForm.invalid || isLoading">
+        <span *ngIf="!isLoading">Salvează Modificările</span>
+        <span *ngIf="isLoading">Se salvează...</span>
       </button>
     </div>
   </form>

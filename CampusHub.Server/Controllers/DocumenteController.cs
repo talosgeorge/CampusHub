@@ -2,8 +2,7 @@
 using System.IO;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AngularApp1.Server.Data;
-using AngularApp1.Server.Models;
+using CampusHub.Server.Data;
 using CampusHub.Server.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;

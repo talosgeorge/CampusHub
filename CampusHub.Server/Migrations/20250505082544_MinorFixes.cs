@@ -5,7 +5,7 @@
 namespace CampusHub.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIdentitySupport : Migration
+    public partial class MinorFixes : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

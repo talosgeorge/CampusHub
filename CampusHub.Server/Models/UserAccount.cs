@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AngularApp1.Server.Models
+namespace CampusHub.Server.Models
 {
     public class UserAccount : IdentityUser
     {
-        // Poți adăuga aici extra proprietăți dacă ai nevoie (ex: Nume, Prenume etc.)
-        
+        // Additional properties can be added here (e.g., FirstName, LastName, etc.)  
+
+        public ICollection<Grade> Grades { get; set; }
+        public int? UserDetailsId { get; set; }
+        [ForeignKey("UserDetailsId")]
+        public UserDetails? UserDetails { get; set; }
     }
 }

@@ -1,17 +1,32 @@
-﻿using AngularApp1.Server.Models;
+﻿
 using CampusHub.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AngularApp1.Server.Data
+namespace CampusHub.Server.Data
 {
     public class AppDbContext : IdentityDbContext<UserAccount>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Grade>()
+                .HasOne(g => g.UserAccount)
+                .WithMany(u => u.Grades)
+                .HasForeignKey(g => g.UserAccountId)
+                .OnDelete(DeleteBehavior.Cascade); // Optional
+        }
+
+
         // Custom tables
-        public DbSet<UserDetails> userDetailSet { get; set; }
+        public DbSet<UserAccount> UserAccounts { get; set; }
+        public DbSet<UserDetails> UserDetailsSet { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Grade> Grades { get; set; }
         public DbSet<Document> Documente { get; set; }
         public DbSet<TipDocument> TipuriDocumente { get; set; }
     }

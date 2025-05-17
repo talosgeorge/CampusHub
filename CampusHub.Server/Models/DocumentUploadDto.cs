@@ -7,5 +7,6 @@ namespace CampusHub.Server.Models
         public int TipDocumentId { get; set; }
         public string? Descriere { get; set; }
         public IFormFile File { get; set; }
+        public string UserId { get; set; }
     }
 }

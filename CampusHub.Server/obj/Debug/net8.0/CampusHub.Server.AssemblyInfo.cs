@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CampusHub.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+657d046596b90d5852243bde76751bd8c7a3c65a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47baf2133fe646d083a5bfd6e53c8f3043e97d2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("CampusHub.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CampusHub.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

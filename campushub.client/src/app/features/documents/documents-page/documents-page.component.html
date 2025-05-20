@@ -1,13 +1,53 @@
 <div class="documents-wrapper">
-  <h2>Your uploaded documents</h2>
+  <h2>Upload a new document</h2>
 
+  <form (ngSubmit)="uploadDocument()" [formGroup]="uploadForm" enctype="multipart/form-data">
+    <label for="tipDocumentId">Document type:</label>
+    <select id="tipDocumentId" formControlName="tipDocumentId" required>
+      <option value="" disabled>Select type</option>
+      <option *ngFor="let tip of tipuriDocumente" [value]="tip.id">{{ tip.nume }}</option>
+    </select>
+
+    <label for="descriere">Description (optional):</label>
+    <input id="descriere" type="text" formControlName="descriere" placeholder="Enter description" />
+
+    <label for="file">Select file:</label>
+    <input id="file" type="file" name="file" (change)="onFileSelected($event)" required />
+
+    <div *ngIf="!selectedFile && uploadForm.touched" class="error">
+      Please select a file to upload.
+    </div>
+
+    <button type="submit" [disabled]="!uploadForm.valid || !selectedFile">Upload</button>
+  </form>
+
+  <hr />
+
+  <h2>Your uploaded documents</h2>
   <p *ngIf="documents.length === 0">No documents uploaded yet.</p>
 
   <ul *ngIf="documents.length > 0">
     <li *ngFor="let doc of documents">
-      <strong>{{ doc.fileName }}</strong> — {{ doc.descriere }} ({{ doc.tipDocumentNume }})
-      <br />
-      <small>{{ doc.dataUpload }}</small>
+      <div class="info">
+        <div class="filename">{{ doc.fileName }}</div>
+        <div class="descriere">— {{ doc.descriere }}</div>
+        <div class="meta">
+          Type: <strong>{{ doc.tipDocumentNume }}</strong> · Uploaded: {{ doc.dataUpload | date:'medium' }}
+        </div>
+      </div>
+      <div class="actions">
+        <button *ngIf="!doc.isEditing" class="edit" (click)="toggleEdit(doc)">Edit</button>
+        <button class="delete" (click)="deleteDocument(doc.id)">Delete</button>
+
+        <div *ngIf="doc.isEditing">
+          <input type="text" [(ngModel)]="doc.newDescriere" placeholder="New description" />
+          <select [(ngModel)]="doc.newTipDocumentId">
+            <option *ngFor="let tip of tipuriDocumente" [value]="tip.id">{{ tip.nume }}</option>
+          </select>
+          <button class="edit" (click)="updateDocument(doc)">Save</button>
+          <button class="delete" (click)="toggleEdit(doc)">Cancel</button>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

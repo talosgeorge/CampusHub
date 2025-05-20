@@ -9,7 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="public\assets\NewFolder\" />
-    <Folder Include="src\app\core\" />
     <Folder Include="src\app\shared\" />
   </ItemGroup>
 </Project>

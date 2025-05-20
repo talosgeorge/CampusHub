@@ -6,11 +6,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CampusHub.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class AddAcademicYearSemesterFaculty : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AcademicYears",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    YearLabel = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AcademicYears", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -26,17 +39,16 @@ namespace CampusHub.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subjects",
+                name: "Faculties",
                 columns: table => new
                 {
-                    SubjectId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SubjectName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Credits = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subjects", x => x.SubjectId);
+                    table.PrimaryKey("PK_Faculties", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,6 +92,26 @@ namespace CampusHub.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Semesters",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AcademicYearId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Semesters", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Semesters_AcademicYears_AcademicYearId",
+                        column: x => x.AcademicYearId,
+                        principalTable: "AcademicYears",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -105,7 +137,7 @@ namespace CampusHub.Server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserDetailsId = table.Column<int>(type: "int", nullable: true),
+                    FacultyId = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -125,9 +157,29 @@ namespace CampusHub.Server.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_UserDetailsSet_UserDetailsId",
-                        column: x => x.UserDetailsId,
-                        principalTable: "UserDetailsSet",
+                        name: "FK_AspNetUsers_Faculties_FacultyId",
+                        column: x => x.FacultyId,
+                        principalTable: "Faculties",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subjects",
+                columns: table => new
+                {
+                    SubjectId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SubjectName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Credits = table.Column<int>(type: "int", nullable: false),
+                    FacultyId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subjects", x => x.SubjectId);
+                    table.ForeignKey(
+                        name: "FK_Subjects_Faculties_FacultyId",
+                        column: x => x.FacultyId,
+                        principalTable: "Faculties",
                         principalColumn: "Id");
                 });
 
@@ -255,7 +307,8 @@ namespace CampusHub.Server.Migrations
                     Value = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SubjectId = table.Column<int>(type: "int", nullable: false),
-                    UserAccountId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserAccountId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SemesterId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -266,6 +319,11 @@ namespace CampusHub.Server.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Grades_Semesters_SemesterId",
+                        column: x => x.SemesterId,
+                        principalTable: "Semesters",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Grades_Subjects_SubjectId",
                         column: x => x.SubjectId,
@@ -307,9 +365,9 @@ namespace CampusHub.Server.Migrations
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_UserDetailsId",
+                name: "IX_AspNetUsers_FacultyId",
                 table: "AspNetUsers",
-                column: "UserDetailsId");
+                column: "FacultyId");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
@@ -329,6 +387,11 @@ namespace CampusHub.Server.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Grades_SemesterId",
+                table: "Grades",
+                column: "SemesterId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Grades_SubjectId",
                 table: "Grades",
                 column: "SubjectId");
@@ -337,6 +400,16 @@ namespace CampusHub.Server.Migrations
                 name: "IX_Grades_UserAccountId",
                 table: "Grades",
                 column: "UserAccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Semesters_AcademicYearId",
+                table: "Semesters",
+                column: "AcademicYearId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subjects_FacultyId",
+                table: "Subjects",
+                column: "FacultyId");
         }
 
         /// <inheritdoc />
@@ -364,6 +437,9 @@ namespace CampusHub.Server.Migrations
                 name: "Grades");
 
             migrationBuilder.DropTable(
+                name: "UserDetailsSet");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
@@ -373,10 +449,16 @@ namespace CampusHub.Server.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
+                name: "Semesters");
+
+            migrationBuilder.DropTable(
                 name: "Subjects");
 
             migrationBuilder.DropTable(
-                name: "UserDetailsSet");
+                name: "AcademicYears");
+
+            migrationBuilder.DropTable(
+                name: "Faculties");
         }
     }
 }

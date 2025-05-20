@@ -8,8 +8,8 @@ namespace CampusHub.Server.Models
         // Additional properties can be added here (e.g., FirstName, LastName, etc.)  
 
         public ICollection<Grade> Grades { get; set; }
-        public int? UserDetailsId { get; set; }
-        [ForeignKey("UserDetailsId")]
-        public UserDetails? UserDetails { get; set; }
+        //public int? UserDetailsId { get; set; }
+        //[ForeignKey("UserDetailsId")]
+        //public UserDetails? UserDetails { get; set; }
     }
 }

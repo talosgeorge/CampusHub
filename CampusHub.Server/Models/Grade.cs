@@ -15,6 +15,11 @@ namespace CampusHub.Server.Models;
 
         [ForeignKey("UserAccountId")]
         public UserAccount UserAccount { get; set; } // Navigation property
+    public int SemesterId { get; set; }
+    [ForeignKey("SemesterId")]
+    public Semester Semester { get; set; }
+
+
 
 }
 

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CampusHub.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250504223716_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250520133510_AddAcademicYearSemesterFaculty")]
+    partial class AddAcademicYearSemesterFaculty
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,23 @@ namespace CampusHub.Server.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("CampusHub.Server.Models.AcademicYear", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("YearLabel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AcademicYears");
+                });
 
             modelBuilder.Entity("CampusHub.Server.Models.Document", b =>
                 {
@@ -63,6 +80,23 @@ namespace CampusHub.Server.Migrations
                     b.ToTable("Documente");
                 });
 
+            modelBuilder.Entity("CampusHub.Server.Models.Faculty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Faculties");
+                });
+
             modelBuilder.Entity("CampusHub.Server.Models.Grade", b =>
                 {
                     b.Property<int>("GradeId")
@@ -73,6 +107,9 @@ namespace CampusHub.Server.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("SemesterId")
+                        .HasColumnType("int");
 
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
@@ -86,11 +123,35 @@ namespace CampusHub.Server.Migrations
 
                     b.HasKey("GradeId");
 
+                    b.HasIndex("SemesterId");
+
                     b.HasIndex("SubjectId");
 
                     b.HasIndex("UserAccountId");
 
                     b.ToTable("Grades");
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.Semester", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AcademicYearId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AcademicYearId");
+
+                    b.ToTable("Semesters");
                 });
 
             modelBuilder.Entity("CampusHub.Server.Models.Subject", b =>
@@ -104,11 +165,16 @@ namespace CampusHub.Server.Migrations
                     b.Property<int>("Credits")
                         .HasColumnType("int");
 
+                    b.Property<int?>("FacultyId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SubjectName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SubjectId");
+
+                    b.HasIndex("FacultyId");
 
                     b.ToTable("Subjects");
                 });
@@ -149,6 +215,9 @@ namespace CampusHub.Server.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("FacultyId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -178,14 +247,13 @@ namespace CampusHub.Server.Migrations
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("UserDetailsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FacultyId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -194,8 +262,6 @@ namespace CampusHub.Server.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("UserDetailsId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -427,6 +493,10 @@ namespace CampusHub.Server.Migrations
 
             modelBuilder.Entity("CampusHub.Server.Models.Grade", b =>
                 {
+                    b.HasOne("CampusHub.Server.Models.Semester", null)
+                        .WithMany("Grades")
+                        .HasForeignKey("SemesterId");
+
                     b.HasOne("CampusHub.Server.Models.Subject", "Subject")
                         .WithMany()
                         .HasForeignKey("SubjectId")
@@ -444,13 +514,29 @@ namespace CampusHub.Server.Migrations
                     b.Navigation("UserAccount");
                 });
 
+            modelBuilder.Entity("CampusHub.Server.Models.Semester", b =>
+                {
+                    b.HasOne("CampusHub.Server.Models.AcademicYear", "AcademicYear")
+                        .WithMany("Semesters")
+                        .HasForeignKey("AcademicYearId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AcademicYear");
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.Subject", b =>
+                {
+                    b.HasOne("CampusHub.Server.Models.Faculty", null)
+                        .WithMany("Subjects")
+                        .HasForeignKey("FacultyId");
+                });
+
             modelBuilder.Entity("CampusHub.Server.Models.UserAccount", b =>
                 {
-                    b.HasOne("CampusHub.Server.Models.UserDetails", "UserDetails")
-                        .WithMany()
-                        .HasForeignKey("UserDetailsId");
-
-                    b.Navigation("UserDetails");
+                    b.HasOne("CampusHub.Server.Models.Faculty", null)
+                        .WithMany("Users")
+                        .HasForeignKey("FacultyId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -502,6 +588,23 @@ namespace CampusHub.Server.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.AcademicYear", b =>
+                {
+                    b.Navigation("Semesters");
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.Faculty", b =>
+                {
+                    b.Navigation("Subjects");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.Semester", b =>
+                {
+                    b.Navigation("Grades");
                 });
 
             modelBuilder.Entity("CampusHub.Server.Models.UserAccount", b =>

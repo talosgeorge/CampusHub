@@ -1,5 +1,5 @@
 ﻿using CampusHub.Server.Models;
-using AngularApp1.Server.Models;
+//using AngularApp1.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -7,8 +7,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using AngularApp1.Server.Data;
+//using AngularApp1.Server.Data;
 using Microsoft.EntityFrameworkCore;
+using CampusHub.Server.Data;
 
 namespace CampusHub.Server.Controllers
 {
@@ -51,7 +52,7 @@ namespace CampusHub.Server.Controllers
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.UserName ?? ""),
-                 new Claim(ClaimTypes.Role, roleName ?? ""),
+                new Claim(ClaimTypes.Role, roleName ?? ""),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

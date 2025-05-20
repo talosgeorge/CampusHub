@@ -21,12 +21,32 @@ namespace CampusHub.Server.Controllers
             _context = context;
         }
 
-        [HttpGet("getAllGrades")]
-        public async Task<ActionResult<IEnumerable<Grade>>> GetAllGrades()
+        [HttpGet("getMyGrades")]
+        [Authorize(Roles = "student")]
+        public async Task<IActionResult> GetMyGrades()
         {
-            var subjects = await _context.Grades.ToListAsync();
-            return Ok(subjects);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized(new { error = "User ID not found in token" });
+
+            var grades = await _context.Grades
+                .Include(g => g.Subject)
+                .Where(g => g.UserAccountId == userId)
+                .Select(g => new GradeDto
+                {
+                    GradeId = g.GradeId,
+                    Value = g.Value,
+                    Date = g.Date,
+                    SemesterId = g.SemesterId,
+                    SubjectName = g.Subject.SubjectName,
+                    Credits = g.Subject.Credits
+                })
+                .ToListAsync();
+
+            return Ok(grades);
         }
+
 
         [HttpGet("getGradeById/{id}")]
         public async Task<ActionResult<Grade>> GetGradeById(int id)
@@ -67,7 +87,8 @@ namespace CampusHub.Server.Controllers
             {
                 UserAccountId= (string) model.UserAccountId,
                 SubjectId = model.SubjectId,
-                Value = model.GradeValue
+                Value = model.GradeValue,
+                SemesterId = model.SemesterId
             };
 
             // Add the grade to the database
@@ -86,12 +107,38 @@ namespace CampusHub.Server.Controllers
                 .Include(g => g.Subject) // Optional: include related subject info
                 .ToListAsync();
 
-            if (grades == null || !grades.Any())
-            {
+            if (!grades.Any())
                 return NotFound(new { error = "No grades found for this user." });
-            }
 
             return Ok(grades);
         }
+        
+        [HttpPut("updateGrade/{id}")]
+        public async Task<IActionResult> UpdateGrade(int id, [FromBody] AddGradeModel model)
+        {
+            var grade = await _context.Grades.FindAsync(id);
+            if (grade == null)
+                return NotFound(new { error = "Grade not found" });
+
+            grade.Value = model.GradeValue;
+            grade.SubjectId = model.SubjectId;
+            grade.SemesterId = model.SemesterId;
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Grade updated successfully" });
+        }
+
+        [HttpDelete("deleteGrade/{id}")]
+        public async Task<IActionResult> DeleteGrade(int id)
+        {
+            var grade = await _context.Grades.FindAsync(id);
+            if (grade == null)
+                return NotFound(new { error = "Grade not found" });
+
+            _context.Grades.Remove(grade);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Grade deleted successfully" });
+        }
+
     }
 }

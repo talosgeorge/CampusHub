@@ -1,5 +1,5 @@
 ﻿using System;
-using AngularApp1.Server.Models; // namespace unde e UserAccount
+using CampusHub.Server.Models; // namespace unde e UserAccount
 
 namespace CampusHub.Server.Models
 {

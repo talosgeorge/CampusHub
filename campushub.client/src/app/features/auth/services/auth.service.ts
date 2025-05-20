@@ -56,6 +56,19 @@ export class AuthService {
     }
   }
 
+  getUserId(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const decoded: JwtPayload = jwtDecode(token);
+      return decoded.sub; // sau decoded.nameid, dacă JWT-ul tău folosește alt câmp
+    } catch {
+      return null;
+    }
+  }
+
+
   logout(): void {
     this.removeToken();
     // Poți adăuga redirect aici dacă vrei

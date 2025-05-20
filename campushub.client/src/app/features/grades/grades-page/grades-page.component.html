@@ -1,1 +1,32 @@
-<p>grades-page works!</p>
+<div class="grades-wrapper">
+  <h2>My Grades</h2>
+
+  <div class="filter-section">
+    <label for="semesterFilter">Filter by semester:</label>
+    <select id="semesterFilter" [(ngModel)]="selectedSemester" (change)="filterBySemester()">
+      <option [value]="null">All</option>
+      <option *ngFor="let sem of semesters" [value]="sem">Semester {{ sem }}</option>
+    </select>
+  </div>
+
+  <table class="grades-table">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Credits</th>
+        <th>Grade</th>
+        <th>Date</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grade of filteredGrades">
+        <td>{{ grade.subjectName }}</td>
+        <td>{{ grade.credits }}</td>
+        <td>{{ grade.value }}</td>
+        <td>{{ grade.date | date:'dd/MM/yyyy' }}</td>
+        <td>{{ grade.semesterId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

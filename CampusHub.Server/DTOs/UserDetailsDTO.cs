@@ -5,6 +5,8 @@ namespace CampusHub.Server.DTOs
     public class UserDetailsDto
     {
         [Required]
+        public int Id { get; set; }
+        [Required]
         [StringLength(13, MinimumLength = 13)]
         public string Cnp { get; set; }
 

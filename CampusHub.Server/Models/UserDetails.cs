@@ -4,10 +4,11 @@ namespace CampusHub.Server.Models
 {
     public class UserDetails
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string UserId { get; set; }
         public virtual UserAccount User { get; set; }
-         [StringLength(13)]
+        [Required]
+        [StringLength(13, MinimumLength = 13)]
         public string cnp { get; set; }
         public string nrMatricol { get; set; }
         public string facultate { get; set; }

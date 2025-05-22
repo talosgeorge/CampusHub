@@ -5,7 +5,9 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormsModule
+  FormsModule,
+  AbstractControl,
+  ValidationErrors
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -36,7 +38,7 @@ export class UserDetailsComponent implements OnInit {
       cnp: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13)]],
       nrMatricol: ['', Validators.required],
       facultate: ['', Validators.required],
-      dataNasterii: ['', Validators.required],
+      dataNasterii: ['', [Validators.required,this.dateNotInFutureValidator]],
       nume: ['', Validators.required],
       prenume: ['', Validators.required],
       prenumeTata: [''],
@@ -81,9 +83,17 @@ export class UserDetailsComponent implements OnInit {
     if (this.detailsForm.valid) {
       this.isLoading = true;
 
+      const userId = this.getUserIdFromToken();
+      if (!userId) {
+        this.showError('User ID invalid sau token expirat.');
+        this.isLoading = false;
+        return;
+      }
+
       const formData = {
         ...this.detailsForm.value,
-        dataNasterii: new Date(this.detailsForm.value.dataNasterii).toISOString()
+        dataNasterii: new Date(this.detailsForm.value.dataNasterii).toISOString(),
+        userId: userId
       };
 
       console.log('Data being sent:', formData);
@@ -115,6 +125,14 @@ export class UserDetailsComponent implements OnInit {
     if (!backendDate) return '';
     return backendDate.split('T')[0];
   }
+  private dateNotInFutureValidator(control: AbstractControl): ValidationErrors | null {
+    const today = new Date();
+    const inputDate = new Date(control.value);
+    if (inputDate > today) {
+      return { futureDate: true };
+    }
+    return null;
+  }
 
   private showError(message: string): void {
     this.snackBar.open(message, 'Închide', {
@@ -127,5 +145,20 @@ export class UserDetailsComponent implements OnInit {
     Object.values(this.detailsForm.controls).forEach(control => {
       control.markAsTouched();
     });
+  }
+
+  private getUserIdFromToken(): string | null {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payloadJson = atob(payloadBase64);
+      const payload = JSON.parse(payloadJson);
+      return payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || null;
+    } catch (error) {
+      console.error('Eroare la decodificarea tokenului:', error);
+      return null;
+    }
   }
 }

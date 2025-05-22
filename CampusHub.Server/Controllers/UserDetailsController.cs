@@ -36,26 +36,35 @@ namespace CampusHub.Server.Controllers
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (string.IsNullOrEmpty(userId))
+                {
+                    _logger.LogWarning("GET /my: User not authenticated.");
                     return Unauthorized(new { Message = "User not authenticated" });
+                }
 
                 var details = await _context.UserDetails
                     .FirstOrDefaultAsync(ud => ud.UserId == userId);
 
                 if (details == null)
+                {
+                    _logger.LogInformation("GET /my: No UserDetails found for userId {UserId}", userId);
                     return NotFound(new { Message = "User details not found" });
+                }
 
+                _logger.LogInformation("GET /my: UserDetails found for userId {UserId}", userId);
                 return Ok(MapToDto(details));
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error fetching user details");
+                _logger.LogError(ex, "GET /my: Unexpected error");
                 return StatusCode(500, new
                 {
                     Message = "Internal server error",
-                    Error = ex.Message
+                    Error = ex.Message,
+                    StackTrace = ex.StackTrace
                 });
             }
         }
+
 
         [HttpPost]
         public async Task<IActionResult> UpsertDetails([FromBody] UserDetailsDto dto)
@@ -63,11 +72,19 @@ namespace CampusHub.Server.Controllers
             try
             {
                 if (!ModelState.IsValid)
+                {
                     return BadRequest(new
                     {
                         Message = "Invalid data",
-                        Errors = ModelState.Values.SelectMany(v => v.Errors)
+                        Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)
                     });
+                }
+
+                // Validare: nu acceptăm data nașterii în viitor
+                if (dto.DataNasterii > DateTime.UtcNow)
+                {
+                    return BadRequest(new { Message = "Data nașterii nu poate fi în viitor." });
+                }
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (string.IsNullOrEmpty(userId))
@@ -76,8 +93,6 @@ namespace CampusHub.Server.Controllers
                 var user = await _userManager.FindByIdAsync(userId);
                 if (user == null)
                     return NotFound(new { Message = "User not found" });
-
-                var dataNasterii = dto.DataNasterii; 
 
                 var existingDetails = await _context.UserDetails
                     .FirstOrDefaultAsync(ud => ud.UserId == userId);
@@ -90,7 +105,7 @@ namespace CampusHub.Server.Controllers
                         cnp = dto.Cnp,
                         nrMatricol = dto.NrMatricol,
                         facultate = dto.Facultate,
-                        dataNasterii = dataNasterii,
+                        dataNasterii = dto.DataNasterii,
                         nume = dto.Nume,
                         prenume = dto.Prenume,
                         prenumeTata = dto.PrenumeTata,
@@ -104,14 +119,17 @@ namespace CampusHub.Server.Controllers
                         adresa = dto.Adresa
                     };
 
+                    _logger.LogInformation("Adăugare UserDetails nou: {@Details}", newDetails);
                     await _context.UserDetails.AddAsync(newDetails);
                 }
                 else
                 {
+                    _logger.LogInformation("Actualizare UserDetails existent: {@Details}", existingDetails);
+
                     existingDetails.cnp = dto.Cnp;
                     existingDetails.nrMatricol = dto.NrMatricol;
                     existingDetails.facultate = dto.Facultate;
-                    existingDetails.dataNasterii = dataNasterii;
+                    existingDetails.dataNasterii = dto.DataNasterii;
                     existingDetails.nume = dto.Nume;
                     existingDetails.prenume = dto.Prenume;
                     existingDetails.prenumeTata = dto.PrenumeTata;
@@ -148,8 +166,9 @@ namespace CampusHub.Server.Controllers
                 _logger.LogError(ex, "Unexpected error while saving user details");
                 return StatusCode(500, new
                 {
-                    Message = "Internal server error",
-                    Error = ex.Message
+                    Message = "Unexpected server error",
+                    Error = ex.Message,
+                    Inner = ex.InnerException?.Message
                 });
             }
         }
@@ -158,6 +177,7 @@ namespace CampusHub.Server.Controllers
         {
             return new UserDetailsDto
             {
+                Id = details.Id,
                 Cnp = details.cnp,
                 NrMatricol = details.nrMatricol,
                 Facultate = details.facultate,

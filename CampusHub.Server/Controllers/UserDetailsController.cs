@@ -116,7 +116,8 @@ namespace CampusHub.Server.Controllers
                         nationalitate = dto.Nationalitate,
                         seriaBuletin = dto.SeriaBuletin,
                         numarBuletin = dto.NumarBuletin,
-                        adresa = dto.Adresa
+                        adresa = dto.Adresa,
+                        Handicap = dto.Handicap
                     };
 
                     _logger.LogInformation("Adăugare UserDetails nou: {@Details}", newDetails);
@@ -141,6 +142,7 @@ namespace CampusHub.Server.Controllers
                     existingDetails.seriaBuletin = dto.SeriaBuletin;
                     existingDetails.numarBuletin = dto.NumarBuletin;
                     existingDetails.adresa = dto.Adresa;
+                    existingDetails.Handicap = dto.Handicap;
 
                     _context.UserDetails.Update(existingDetails);
                 }
@@ -172,6 +174,36 @@ namespace CampusHub.Server.Controllers
                 });
             }
         }
+        [HttpDelete("my")]
+        public async Task<IActionResult> DeleteMyDetails()
+        {
+            try
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                    return Unauthorized(new { Message = "User not authenticated" });
+
+                var details = await _context.UserDetails
+                    .FirstOrDefaultAsync(ud => ud.UserId == userId);
+
+                if (details == null)
+                    return NotFound(new { Message = "User details not found" });
+
+                _context.UserDetails.Remove(details);
+                await _context.SaveChangesAsync();
+
+                return NoContent(); // 204
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting user details");
+                return StatusCode(500, new
+                {
+                    Message = "Internal server error",
+                    Error = ex.Message
+                });
+            }
+        }
 
         private UserDetailsDto MapToDto(UserDetails details)
         {
@@ -192,7 +224,8 @@ namespace CampusHub.Server.Controllers
                 Nationalitate = details.nationalitate,
                 SeriaBuletin = details.seriaBuletin,
                 NumarBuletin = details.numarBuletin,
-                Adresa = details.adresa
+                Adresa = details.adresa,
+                Handicap = details.Handicap
             };
         }
     }

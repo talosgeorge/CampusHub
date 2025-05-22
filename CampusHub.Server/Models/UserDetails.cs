@@ -24,5 +24,6 @@ namespace CampusHub.Server.Models
         public string seriaBuletin { get; set; }
         public string numarBuletin { get; set; }
         public string adresa { get; set; }
+        public string? Handicap { get; set; }
     }
 }

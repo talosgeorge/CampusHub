@@ -50,5 +50,6 @@ namespace CampusHub.Server.DTOs
 
         [Required]
         public string Adresa { get; set; }
+        public string? Handicap { get; set; }
     }
 }

@@ -49,7 +49,8 @@ export class UserDetailsComponent implements OnInit {
       nationalitate: ['', Validators.required],
       seriaBuletin: ['', Validators.required],
       numarBuletin: ['', Validators.required],
-      adresa: ['', Validators.required]
+      adresa: ['', Validators.required],
+      handicap: ['']
     });
   }
 
@@ -125,6 +126,9 @@ export class UserDetailsComponent implements OnInit {
     if (!backendDate) return '';
     return backendDate.split('T')[0];
   }
+  clearHandicap(): void {
+    this.detailsForm.get('handicap')?.setValue('');
+  }
   private dateNotInFutureValidator(control: AbstractControl): ValidationErrors | null {
     const today = new Date();
     const inputDate = new Date(control.value);
@@ -133,6 +137,23 @@ export class UserDetailsComponent implements OnInit {
     }
     return null;
   }
+  deleteDetails(): void {
+    const confirmDelete = confirm("Are you sure you want to delete all your personal data");
+
+    if (!confirmDelete) return;
+
+    this.http.delete('https://localhost:7284/api/userdetails/my').subscribe({
+      next: () => {
+        this.snackBar.open("Data has been deleted", "Close", { duration: 3000 });
+        this.detailsForm.reset();
+      },
+      error: err => {
+        console.error("Eroare la ștergere", err);
+        this.snackBar.open("Deleting Error", "Close", { duration: 5000 });
+      }
+    });
+  }
+
 
   private showError(message: string): void {
     this.snackBar.open(message, 'Închide', {
@@ -140,6 +161,7 @@ export class UserDetailsComponent implements OnInit {
       panelClass: ['error-snackbar']
     });
   }
+
 
   private markAllAsTouched(): void {
     Object.values(this.detailsForm.controls).forEach(control => {

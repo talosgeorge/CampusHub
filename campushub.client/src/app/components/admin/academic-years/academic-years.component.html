@@ -1,0 +1,52 @@
+<div class="faculties-container">
+  <h2>Academic Years</h2>
+
+  <!-- Add new academic year -->
+  <div class="form-section">
+    <input type="text"
+           placeholder="e.g. 2024-2025"
+           [(ngModel)]="newYearLabel" />
+    <button (click)="addAcademicYear()">Add</button>
+  </div>
+
+  <!-- Academic Years Table -->
+  <table class="faculties-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Year Label</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let year of academicYears">
+        <td>{{ year.id }}</td>
+
+        <!-- Normal display -->
+        <td *ngIf="!editYear || editYear.id !== year.id">
+          {{ year.yearLabel }}
+        </td>
+
+        <!-- Edit mode -->
+        <td *ngIf="editYear && editYear.id === year.id">
+          <input [(ngModel)]="editYear.yearLabel" />
+        </td>
+
+        <!-- Action buttons -->
+        <td>
+          <button *ngIf="!editYear || editYear.id !== year.id"
+                  (click)="editYearMode(year)">
+            Edit
+          </button>
+
+          <ng-container *ngIf="editYear && editYear.id === year.id">
+            <button (click)="saveEdit()">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+
+          <button (click)="deleteYear(year.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

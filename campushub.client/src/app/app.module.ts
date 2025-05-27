@@ -13,7 +13,8 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
 import { DocumentsPageComponent } from './features/documents/documents-page/documents-page.component';
 import { GradesPageComponent } from './features/grades/grades-page/grades-page.component';
 
-import { AuthInterceptor } from './interceptors/auth.interceptor'; // ✅ Importă interceptorul
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AcademicYearsComponent } from './components/admin/academic-years/academic-years.component'; // ✅ Importă interceptorul
 
 @NgModule({
   declarations: [

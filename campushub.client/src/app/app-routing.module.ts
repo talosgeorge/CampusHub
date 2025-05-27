@@ -44,7 +44,8 @@ const routes: Routes = [
       { path: 'faculties', loadComponent: () => import('./components/admin/faculties/faculties.component').then(m => m.FacultiesComponent) },
       { path: 'grades', loadComponent: () => import('./components/admin/grades/grades.component').then(m => m.GradesComponent) },
       { path: 'subjects', loadComponent: () => import('./components/admin/subjects/subjects.component').then(m => m.SubjectsComponent) },
-      { path: 'semesters', loadComponent: () => import('./components/admin/semesters/semesters.component').then(m => m.SemestersComponent) }
+      { path: 'semesters', loadComponent: () => import('./components/admin/semesters/semesters.component').then(m => m.SemestersComponent) },
+      { path: 'academic-years', loadComponent: () => import('./components/admin/academic-years/academic-years.component').then(m => m.AcademicYearsComponent) }
     ]
   },
 ];

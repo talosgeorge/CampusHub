@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,17 @@ const routes: Routes = [
   {
     path: 'students/grades',
     loadComponent: () => import('./features/grades/grades-page/grades-page.component').then(m => m.GradesPageComponent)
-  }
+  },
+  {
+    path: 'admin',
+    component: AdminHomeComponent,
+    children: [
+      { path: 'faculties', loadComponent: () => import('./components/admin/faculties/faculties.component').then(m => m.FacultiesComponent) },
+      { path: 'grades', loadComponent: () => import('./components/admin/grades/grades.component').then(m => m.GradesComponent) },
+      { path: 'subjects', loadComponent: () => import('./components/admin/subjects/subjects.component').then(m => m.SubjectsComponent) },
+      { path: 'semesters', loadComponent: () => import('./components/admin/semesters/semesters.component').then(m => m.SemestersComponent) }
+    ]
+  },
 ];
 
 @NgModule({

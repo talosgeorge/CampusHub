@@ -8,13 +8,44 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using System.Text;
+static async Task SeedAdminAsync(IServiceProvider serviceProvider)
+{
+    var userManager = serviceProvider.GetRequiredService<UserManager<UserAccount>>();
+    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    string adminEmail = "admin@campushub.com";
+    string adminPassword = "Admin123!"; 
+
+    // Creează rolul dacă nu există
+    if (!await roleManager.RoleExistsAsync("admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("admin"));
+    }
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        var user = new UserAccount
+        {
+            UserName = "admin",
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
+
+        var result = await userManager.CreateAsync(user, adminPassword);
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(user, "admin");
+        }
+    }
+}
 
 var builder = WebApplication.CreateBuilder(args);
 // Simi: DESKTOP-3KFCOVV\SQLEXPRESS
 // Talos: Talos\\SQLEXPRESS03
 // === Configurare conexiune DB ===
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=DESKTOP-3KFCOVV\\SQLEXPRESS;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
+    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString)
@@ -145,5 +176,9 @@ app.Use(async (context, next) =>
     await next();
 });
 app.MapFallbackToFile("/index.html");
-
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await SeedAdminAsync(services);
+}
 app.Run();

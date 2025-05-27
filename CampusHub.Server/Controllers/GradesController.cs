@@ -139,6 +139,20 @@ namespace CampusHub.Server.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { message = "Grade deleted successfully" });
         }
+        [HttpGet("getAllStudentsBasic")]
+        public async Task<IActionResult> GetAllStudentsBasic()
+        {
+            var students = await _userManager.GetUsersInRoleAsync("student");
+
+            var studentList = students.Select(s => new
+            {
+                Id = s.Id,
+                DisplayName = s.Email ?? s.UserName
+            });
+
+            return Ok(studentList);
+        }
+
 
     }
 }

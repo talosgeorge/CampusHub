@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace CampusHub.Server.Models
 {
@@ -11,7 +12,9 @@ namespace CampusHub.Server.Models
         public int Credits { get; set; }
         public int FacultyId { get; set; }
         [ForeignKey("FacultyId")]
-        public Faculty Faculty { get; set; }
+
+        [JsonIgnore]
+        public Faculty? Faculty { get; set; }
 
     }
 }

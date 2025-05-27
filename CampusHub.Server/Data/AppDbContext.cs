@@ -3,6 +3,7 @@ using CampusHub.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace CampusHub.Server.Data
 {
@@ -19,7 +20,13 @@ namespace CampusHub.Server.Data
                 .WithMany(u => u.Grades)
                 .HasForeignKey(g => g.UserAccountId)
                 .OnDelete(DeleteBehavior.Cascade); // Optional
+           builder.Entity<Subject>()
+                .HasOne(s => s.Faculty)
+                .WithMany(f => f.Subjects)
+                .HasForeignKey(s => s.FacultyId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
+
 
 
         // Custom tables

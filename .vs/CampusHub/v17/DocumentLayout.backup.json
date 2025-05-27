@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|solutionrelative:campushub.server\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{8B1E3035-0825-4445-82D8-1A0E7D25DBB0}|campushub.client\\campushub.client.esproj|solutionrelative:campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{526FAEEF-58AA-42AB-AA74-1EEC71590AE6}|CampusHub.Server\\CampusHub.Server.csproj|c:\\users\\talos\\desktop\\proiect ii\\campushub\\campushub.server\\controllers\\facultiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -128,7 +152,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -136,20 +160,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Subject.cs",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\Subject.cs",
+              "RelativeDocumentMoniker": "CampusHub.Server\\Models\\Subject.cs",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\Subject.cs",
+              "RelativeToolTip": "CampusHub.Server\\Models\\Subject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T18:07:35.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "subjects.component.html",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html",
+              "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html",
+              "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.html",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwC4AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-05-27T16:49:32.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "subjects.component.css",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css",
+              "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css",
+              "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.css",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwEcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:49:20.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\SubjectsController.cs",
+              "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\SubjectsController.cs",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\SubjectsController.cs",
+              "RelativeToolTip": "CampusHub.Server\\Controllers\\SubjectsController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:49:01.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "subjects.component.ts",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts",
+              "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts",
+              "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\subjects\\subjects.component.ts",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwEUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-05-27T16:48:07.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "faculties.component.css",
+              "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css",
+              "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css",
+              "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css",
+              "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.css",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwFQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:34:45.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "faculties.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts",
               "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts",
               "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.ts",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAADYAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-05-27T16:24:52.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "FacultiesController.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\FacultiesController.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\FacultiesController.cs",
@@ -162,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "admin-home.component.html",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\admin-home\\admin-home.component.html",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\admin-home\\admin-home.component.html",
@@ -175,20 +277,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "faculties.component.html",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html",
               "ToolTip": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html",
               "RelativeToolTip": "campushub.client\\src\\app\\components\\admin\\faculties\\faculties.component.html",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwCoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-05-27T16:12:06.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "student.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\student\\student.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\student\\student.component.ts",
@@ -200,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "student.component.scss",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\student\\student.component.scss",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\student\\student.component.scss",
@@ -212,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "admin-home.component.css",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\components\\admin\\admin-home\\admin-home.component.css",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\components\\admin\\admin-home\\admin-home.component.css",
@@ -224,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "app-routing.module.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app-routing.module.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app-routing.module.ts",
@@ -237,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "login.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\auth\\login\\login.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\auth\\login\\login.component.ts",
@@ -249,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "documents-page.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\documents\\documents-page\\documents-page.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\documents\\documents-page\\documents-page.component.ts",
@@ -261,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Controllers\\AccountController.cs",
@@ -273,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Grade.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\Grade.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Models\\Grade.cs",
@@ -285,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "UserAccount.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Models\\UserAccount.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Models\\UserAccount.cs",
@@ -297,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.json",
               "RelativeDocumentMoniker": "CampusHub.Server\\appsettings.json",
@@ -309,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "dbo.Faculties.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/TALOS_SQLEXPRESS03/CampusHub/True/SqlTable/dbo.Faculties.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/TALOS_SQLEXPRESS03/CampusHub/True/SqlTable/dbo.Faculties.sql",
@@ -318,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "grades-page.component.css",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.css",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.css",
@@ -330,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "grades-page.component.html",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.html",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.html",
@@ -342,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\Program.cs",
               "RelativeDocumentMoniker": "CampusHub.Server\\Program.cs",
@@ -354,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "dbo.Grades.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/TALOS_SQLEXPRESS03/CampusHub/True/SqlTable/dbo.Grades.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/TALOS_SQLEXPRESS03/CampusHub/True/SqlTable/dbo.Grades.sql",
@@ -363,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\appsettings.Development.json",
               "RelativeDocumentMoniker": "CampusHub.Server\\appsettings.Development.json",
@@ -375,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "auth.interceptor.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\core\\auth.interceptor.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\core\\auth.interceptor.ts",
@@ -387,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.module.ts",
@@ -399,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "app.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.ts",
@@ -411,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "grades-page.component.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.ts",
@@ -423,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "app.component.html",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app.component.html",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.html",
@@ -435,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 31,
               "Title": "app.component.scss",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app.component.scss",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.scss",
@@ -447,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 30,
               "Title": "app.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\app.component.spec.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\app.component.spec.ts",
@@ -459,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "reg.service.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\reg.service.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\reg.service.ts",
@@ -471,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "grades-page.component.spec.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.spec.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\grades\\grades-page\\grades-page.component.spec.ts",
@@ -483,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "auth.service.ts",
               "DocumentMoniker": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\campushub.client\\src\\app\\features\\auth\\services\\auth.service.ts",
               "RelativeDocumentMoniker": "campushub.client\\src\\app\\features\\auth\\services\\auth.service.ts",

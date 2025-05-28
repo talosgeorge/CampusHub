@@ -6,10 +6,14 @@ namespace CampusHub.Server.Models
     {
         [Key]
         public int Id { get; set; }
+        public string UserId { get; set; }
+        public virtual UserAccount User { get; set; }
+        [Required]
+        [StringLength(13, MinimumLength = 13)]
         public string cnp { get; set; }
         public string nrMatricol { get; set; }
         public string facultate { get; set; }
-        public string dataNasterii { get; set; }
+        public DateTime dataNasterii { get; set; }
         public string nume { get; set; }
         public string prenume { get; set; }
         public string prenumeTata { get; set; }
@@ -21,5 +25,6 @@ namespace CampusHub.Server.Models
         public string seriaBuletin { get; set; }
         public string numarBuletin { get; set; }
         public string adresa { get; set; }
+        public string? Handicap { get; set; }
     }
 }

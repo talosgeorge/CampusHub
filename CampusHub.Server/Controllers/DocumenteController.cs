@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CampusHub.Server.Data;
 using CampusHub.Server.Models;
+using CampusHub.Server.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

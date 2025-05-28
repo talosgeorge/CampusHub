@@ -267,9 +267,18 @@ namespace CampusHub.Server.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Handicap")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UserID");
 
                     b.Property<string>("adresa")
                         .IsRequired()
@@ -277,11 +286,11 @@ namespace CampusHub.Server.Migrations
 
                     b.Property<string>("cnp")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
 
-                    b.Property<string>("dataNasterii")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("dataNasterii")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("facultate")
                         .IsRequired()
@@ -333,7 +342,10 @@ namespace CampusHub.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserDetailsSet");
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("UserDetails", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -542,6 +554,17 @@ namespace CampusHub.Server.Migrations
                     b.HasOne("CampusHub.Server.Models.Faculty", null)
                         .WithMany("Users")
                         .HasForeignKey("FacultyId");
+                });
+
+            modelBuilder.Entity("CampusHub.Server.Models.UserDetails", b =>
+                {
+                    b.HasOne("CampusHub.Server.Models.UserAccount", "User")
+                        .WithOne()
+                        .HasForeignKey("CampusHub.Server.Models.UserDetails", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

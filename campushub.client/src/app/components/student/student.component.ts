@@ -13,6 +13,7 @@ export class StudentComponent {
 
   router = inject(Router);
   isLoggedInAsStudent: boolean = false;
+  username = '';
 
   ngOnInit(){
     const token = localStorage.getItem('token');
@@ -20,6 +21,7 @@ export class StudentComponent {
 
     if(token && role == 'student'){
       this.isLoggedInAsStudent = true;
+      this.username = localStorage.getItem("userName") || '';
     }
 
     if(!this.isLoggedInAsStudent){

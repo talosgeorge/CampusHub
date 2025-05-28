@@ -32,6 +32,7 @@ export class LoginComponent {
         localStorage.setItem('token', res.token);
         localStorage.setItem('userId',res.userId);
         localStorage.setItem('userRole',res.role);
+        localStorage.setItem("userName",res.username);
         this.router.navigateByUrl('/students').then(() => {
           window.location.reload();
         });

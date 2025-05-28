@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=K2D');
 
-.active{
-    color:red;
-}
+
 
 nav{
     position: absolute;
@@ -50,6 +48,10 @@ nav{
            a{
             color: inherit;
             text-decoration: none;
+
+            .active{
+                color:red;
+            }
            }
         }
     }

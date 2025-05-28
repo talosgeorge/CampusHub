@@ -1,33 +1,28 @@
-
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
+import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.scss'
+  imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
+  template: `
+    <app-student-nav-bar *ngIf="loggedInAsStudent"></app-student-nav-bar>
+    <router-outlet></router-outlet>
+  `
 })
-
 export class AppComponent {
-  
-  loggedInAsStudent:boolean = false;
+  loggedInAsStudent: boolean = false;
   router = inject(Router);
 
-  ngOnInit(){
+  ngOnInit() {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('userRole');
 
-    if(token && role == 'student'){
-      this.loggedInAsStudent = true;
-    }
-    else {
-      this.loggedInAsStudent = false;
-    }
+    this.loggedInAsStudent = !!(token && role === 'student');
 
-    if(this.loggedInAsStudent){
+    if (this.loggedInAsStudent) {
       this.router.navigate(['/students']);
     }
   }

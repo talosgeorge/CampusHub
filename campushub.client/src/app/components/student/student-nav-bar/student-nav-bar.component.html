@@ -1,23 +1,21 @@
 <nav>
-    <div class="logo">
-        <img src="assets/images/logoCampusHubRed.png" alt="">
+  <div class="logo">
+    <img src="assets/images/logoCampusHubRed.png" alt="">
+  </div>
+  <div class="items">
+    <ul>
+      <li><a routerLink="/students" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/students/grades" routerLinkActive="active">Grades</a></li>
+      <li class="last"><a routerLink="/students/details" routerLinkActive="active">Details</a></li>
+    </ul>
+  </div>
+
+  <div class="accountCircle">
+    <div class="avatar" (click)="toggleDropDown()">DS</div>
+    <div class="dropdown" *ngIf="dropDownOpen">
+      <ul>
+        <li (click)="disconnect()">Disconnect</li>
+      </ul>
     </div>
-    <div class="items">
-        <ul>
-            <li><a routerLink="/students"  routerLinkActive="active">Home</a></li>
-            <li>Grades</li>
-            <li class="last">Details</li>
-        </ul>
-    </div>
-    
-    <div class="accountCircle">
-        <div class="avatar" (click)="toggleDropDown()">DS</div>
-        <div class="dropdown" *ngIf="dropDownOpen">
-            <ul>
-                <li (click)="disconnect()">Disconnect</li>
-            </ul>
-        </div>
-    </div>
+  </div>
 </nav>
-
-

@@ -71,7 +71,8 @@ namespace CampusHub.Server.Controllers
                 token = new JwtSecurityTokenHandler().WriteToken(token),
                 expiration = token.ValidTo,
                 userId = user.Id.ToString(),
-                role = roleName
+                role = roleName,
+                username = user.UserName
             });
         }
     }

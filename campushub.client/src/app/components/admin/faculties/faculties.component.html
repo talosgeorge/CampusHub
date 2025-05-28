@@ -1,0 +1,52 @@
+<div class="faculties-container">
+  <h2>Faculties Management</h2>
+
+  <!-- Add new faculty form -->
+  <div class="form-section">
+    <input type="text"
+           placeholder="Faculty Name"
+           [(ngModel)]="newFacultyName" />
+    <button (click)="addFaculty()">Add Faculty</button>
+  </div>
+
+  <!-- Faculties Table -->
+  <table class="faculties-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let faculty of faculties">
+        <td>{{ faculty.id }}</td>
+
+        <!-- Normal display -->
+        <td *ngIf="!editFaculty || editFaculty.id !== faculty.id">
+          {{ faculty.name }}
+        </td>
+
+        <!-- Edit mode -->
+        <td *ngIf="editFaculty && editFaculty.id === faculty.id">
+          <input [(ngModel)]="editFaculty.name" />
+        </td>
+
+        <!-- Action buttons -->
+        <td>
+          <button *ngIf="!editFaculty || editFaculty.id !== faculty.id"
+                  (click)="editFacultyMode(faculty)">
+            Edit
+          </button>
+
+          <ng-container *ngIf="editFaculty && editFaculty.id === faculty.id">
+            <button (click)="saveEdit()">Save</button>
+            <button (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+
+          <button (click)="deleteFaculty(faculty.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

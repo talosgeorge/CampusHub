@@ -1,0 +1,74 @@
+<div class="subjects-container">
+  <h2>Subjects Management</h2>
+
+  <!-- Add new subject -->
+  <div class="form-section">
+    <input type="text" placeholder="Subject Name" [(ngModel)]="newSubject.subjectName" />
+    <input type="number" placeholder="Credits" [(ngModel)]="newSubject.credits" />
+    <select [(ngModel)]="newSubject.facultyId">
+      <option [ngValue]="null">Select Faculty</option>
+      <option *ngFor="let faculty of faculties" [value]="faculty.id">{{ faculty.name }}</option>
+    </select>
+    <button (click)="addSubject()">Add Subject</button>
+  </div>
+
+  <!-- Subjects Table -->
+  <table class="subjects-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Credits</th>
+        <th>Faculty</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of subjects">
+        <td>{{ subject.subjectId }}</td>
+
+        <!-- Subject Name -->
+        <td *ngIf="!editSubject || editSubject.subjectId !== subject.subjectId">
+          {{ subject.subjectName }}
+        </td>
+        <td *ngIf="editSubject && editSubject.subjectId === subject.subjectId">
+          <input [(ngModel)]="editSubject.subjectName" />
+        </td>
+
+        <!-- Credits -->
+        <td *ngIf="!editSubject || editSubject.subjectId !== subject.subjectId">
+          {{ subject.credits }}
+        </td>
+        <td *ngIf="editSubject && editSubject.subjectId === subject.subjectId">
+          <input type="number" [(ngModel)]="editSubject.credits" />
+        </td>
+
+        <!-- Faculty -->
+        <td *ngIf="!editSubject || editSubject.subjectId !== subject.subjectId">
+          {{ getFacultyName(subject.facultyId) }}
+        </td>
+        <td *ngIf="editSubject && editSubject.subjectId === subject.subjectId">
+          <select [(ngModel)]="editSubject.facultyId">
+            <option *ngFor="let faculty of faculties" [value]="faculty.id">{{ faculty.name }}</option>
+          </select>
+        </td>
+
+        <!-- Actions -->
+        <td>
+          <button *ngIf="!editSubject || editSubject.subjectId !== subject.subjectId"
+                  class="btn-edit"
+                  (click)="editSubjectMode(subject)">
+            Edit
+          </button>
+
+          <ng-container *ngIf="editSubject && editSubject.subjectId === subject.subjectId">
+            <button class="btn-save" (click)="saveEdit()">Save</button>
+            <button class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+
+          <button class="btn-delete" (click)="deleteSubject(subject.subjectId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

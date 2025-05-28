@@ -1,67 +1,80 @@
 import { Component, inject } from '@angular/core';
-import {  FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 import { LoginService } from '../services/login.service';
-
 
 @Component({
   standalone: true,
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [NgIf,FormsModule,CommonModule,RouterModule]
+  imports: [NgIf, FormsModule, CommonModule, RouterModule]
 })
-
 export class LoginComponent {
   errorMessage: string = '';
   isLoading = false;
-  usernameOrEmail:string = '';
-  password:string = '';
-  isConnected:boolean = false;
-  isLoggedInAsStudent:boolean = false;
-
+  usernameOrEmail: string = '';
+  password: string = '';
 
   loginService = inject(LoginService);
   router = inject(Router);
 
-  login():void {
+  login(): void {
     this.isLoading = true;
-    this.loginService.login(this.usernameOrEmail,this.password).subscribe({
+
+    this.loginService.login(this.usernameOrEmail, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
-        localStorage.setItem('userId',res.userId);
-        localStorage.setItem('userRole',res.role);
-        this.router.navigateByUrl('/students').then(() => {
-          window.location.reload();
+        localStorage.setItem('userId', res.userId);
+        localStorage.setItem('userRole', res.role);
+
+        let redirectUrl = '/';
+        switch (res.role) {
+          case 'admin':
+            redirectUrl = '/admin';
+            break;
+          case 'student':
+            redirectUrl = '/students';
+            break;
+          case 'professor':
+            redirectUrl = '/professor';
+            break;
+        }
+
+        this.router.navigateByUrl(redirectUrl).then(() => {
+          window.location.reload(); // opțional
         });
-        this.isConnected = true;
+
+        this.isLoading = false;
         this.errorMessage = '';
       },
       error: () => {
         this.errorMessage = 'Autentificare eșuată';
-        console.log(this.usernameOrEmail);
-        console.log(this.password);
         this.isLoading = false;
       }
     });
-  } 
+  }
 
-  ngOnInit(){ // Verific daca sunt logat
+  ngOnInit(): void {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('userRole');
 
-    if(token && role == 'student'){
-      this.isLoggedInAsStudent = true;
-    }
-    else{
-      this.isLoggedInAsStudent = false;
-    }
+    if (token && role) {
+      let redirectUrl = '/';
+      switch (role) {
+        case 'admin':
+          redirectUrl = '/admin';
+          break;
+        case 'student':
+          redirectUrl = '/students';
+          break;
+        case 'professor':
+          redirectUrl = '/professor';
+          break;
+      }
 
-    if(this.isLoggedInAsStudent){
-      this.router.navigate(['/students']);
+      this.router.navigate([redirectUrl]);
     }
-    
   }
-
 }

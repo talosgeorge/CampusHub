@@ -1,0 +1,62 @@
+<div class="semesters-container">
+  <h2>Semesters Management</h2>
+
+  <!-- Add new semester -->
+  <div class="form-section">
+    <input type="text" placeholder="e.g. Semester 1" [(ngModel)]="newSemester.name" />
+    <select [(ngModel)]="newSemester.academicYearId">
+      <option [ngValue]="null">Select Academic Year</option>
+      <option *ngFor="let year of academicYears" [value]="year.id">{{ year.yearLabel }}</option>
+    </select>
+    <button (click)="addSemester()">Add Semester</button>
+  </div>
+
+  <!-- Semesters Table -->
+  <table class="semesters-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Academic Year</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sem of semesters">
+        <td>{{ sem.id }}</td>
+
+        <!-- Name -->
+        <td *ngIf="!editSemester || editSemester.id !== sem.id">{{ sem.name }}</td>
+        <td *ngIf="editSemester && editSemester.id === sem.id">
+          <input [(ngModel)]="editSemester.name" />
+        </td>
+
+        <!-- Academic Year -->
+        <td *ngIf="!editSemester || editSemester.id !== sem.id">
+          {{ getAcademicYearLabel(sem.academicYearId) }}
+        </td>
+        <td *ngIf="editSemester && editSemester.id === sem.id">
+          <select [(ngModel)]="editSemester.academicYearId">
+            <option *ngFor="let year of academicYears" [value]="year.id">{{ year.yearLabel }}</option>
+          </select>
+        </td>
+
+        <!-- Actions -->
+        <td>
+          <button *ngIf="!editSemester || editSemester.id !== sem.id"
+                  class="btn-edit"
+                  (click)="editSemesterMode(sem)">
+            Edit
+          </button>
+
+          <ng-container *ngIf="editSemester && editSemester.id === sem.id">
+            <button class="btn-save" (click)="saveEdit()">Save</button>
+            <button class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+
+          <button class="btn-delete" (click)="deleteSemester(sem.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -18,7 +18,7 @@ namespace CampusHub.Server.Controllers
         }
 
         [HttpGet("getAllSubjects")] 
-        public async Task<ActionResult<IEnumerable<Grade>>> GetAllSubjects()
+        public async Task<ActionResult<IEnumerable<Subject>>> GetAllSubjects()
         {
             var subjects = await _context.Subjects.ToListAsync();
             return Ok(subjects);
@@ -47,17 +47,32 @@ namespace CampusHub.Server.Controllers
             return CreatedAtAction(nameof(GetSubject), new { id = subject.SubjectId }, subject);
         }
 
-        [HttpDelete("deleteSubject")]
+        [HttpDelete("deleteSubject/{id}")]
         public async Task<IActionResult> DeleteSubject(int id)
         {
             var subject = await _context.Subjects.FindAsync(id);
             if (subject == null)
-            {
                 return NotFound();
-            }
+
             _context.Subjects.Remove(subject);
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpPut("updateSubject/{id}")]
+        public async Task<IActionResult> UpdateSubject(int id, [FromBody] Subject updatedSubject)
+        {
+            var subject = await _context.Subjects.FindAsync(id);
+            if (subject == null)
+                return NotFound();
+
+            subject.SubjectName = updatedSubject.SubjectName;
+            subject.Credits = updatedSubject.Credits;
+            subject.FacultyId = updatedSubject.FacultyId;
+
+            await _context.SaveChangesAsync();
+            return Ok(subject);
+        }
+
     }
 }

@@ -1,0 +1,103 @@
+/* academic-years.component.css */
+
+.faculties-container {
+  max-width: 900px;
+  margin: 80px auto 40px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2c3e50;
+}
+
+.form-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+  .form-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .form-section button {
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+    .form-section button:hover {
+      background-color: #2980b9;
+    }
+
+.faculties-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+  .faculties-table th,
+  .faculties-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .faculties-table th {
+    background-color: #f7f7f7;
+    color: #2c3e50;
+  }
+
+  .faculties-table tbody tr:hover {
+    background-color: #f2f8ff;
+  }
+
+  .faculties-table input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .faculties-table button {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+    .faculties-table button:hover {
+      opacity: 0.9;
+    }
+
+    .faculties-table button:nth-child(1) {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    .faculties-table button:nth-child(2) {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    .faculties-table button:nth-child(3) {
+      background-color: #e74c3c;
+      color: white;
+    }

@@ -1,0 +1,84 @@
+<div class="grades-container">
+  <h2>Grades Management</h2>
+
+  <!-- Student Selection for Filtering -->
+  <div class="form-section">
+    <select [(ngModel)]="selectedStudentId" (change)="loadGrades()">
+      <option [ngValue]="null">Select student to view grades</option>
+      <option *ngFor="let student of students" [value]="student.id">
+        {{ student.email }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Add New Grade -->
+  <div class="form-section">
+    <select [(ngModel)]="newGrade.userAccountId">
+      <option [ngValue]="null">Select Student</option>
+      <option *ngFor="let student of students" [value]="student.id">
+        {{ student.email }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="newGrade.subjectId">
+      <option [ngValue]="null">Select Subject</option>
+      <option *ngFor="let subj of subjects" [value]="subj.subjectId">
+        {{ subj.subjectName }}
+      </option>
+    </select>
+
+    <select [(ngModel)]="newGrade.semesterId">
+      <option [ngValue]="null">Select Semester</option>
+      <option *ngFor="let sem of semesters" [value]="sem.id">
+        {{ sem.name }}
+      </option>
+    </select>
+
+    <input type="number" [(ngModel)]="newGrade.gradeValue" placeholder="Grade" />
+    <input type="date" [(ngModel)]="newGrade.date" />
+
+    <button (click)="addGrade()">Add Grade</button>
+  </div>
+
+  <!-- Grades Table -->
+  <table class="grades-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Credits</th>
+        <th>Grade</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grade of grades">
+        <td>{{ grade.gradeId }}</td>
+        <td>{{ getStudentEmail(grade.userAccountId) }}</td>
+        <td>{{ grade.subjectName }}</td>
+        <td>{{ grade.credits }}</td>
+
+        <td *ngIf="!editGrade || editGrade.gradeId !== grade.gradeId">{{ grade.value }}</td>
+        <td *ngIf="editGrade && editGrade.gradeId === grade.gradeId">
+          <input type="number" [(ngModel)]="editGrade.value" />
+        </td>
+
+        <td *ngIf="!editGrade || editGrade.gradeId !== grade.gradeId">{{ grade.date | date:'yyyy-MM-dd' }}</td>
+        <td *ngIf="editGrade && editGrade.gradeId === grade.gradeId">
+          <input type="date" [(ngModel)]="editGrade.date" />
+        </td>
+
+        <td>
+          <button *ngIf="!editGrade || editGrade.gradeId !== grade.gradeId" class="btn-edit" (click)="editGradeMode(grade)">Edit</button>
+          <ng-container *ngIf="editGrade && editGrade.gradeId === grade.gradeId">
+            <button class="btn-save" (click)="saveEdit()">Save</button>
+            <button class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+          </ng-container>
+          <button class="btn-delete" (click)="deleteGrade(grade.gradeId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

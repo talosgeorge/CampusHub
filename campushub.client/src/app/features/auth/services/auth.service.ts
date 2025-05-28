@@ -8,6 +8,7 @@ export interface JwtPayload {
   jti: string;
   exp: number;
   iat: number;
+  role: string;
   // Adaugă alte câmpuri din token dacă ai, ex: role
 }
 
@@ -71,6 +72,7 @@ export class AuthService {
 
   logout(): void {
     this.removeToken();
-    // Poți adăuga redirect aici dacă vrei
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('userId');
   }
 }

@@ -6,7 +6,7 @@
         public string Name { get; set; } = string.Empty;
 
         public ICollection<UserAccount> Users { get; set; } = new List<UserAccount>();
-        public ICollection<Subject> Subjects { get; set; } = new List<Subject>();
+        public ICollection<Subject>? Subjects { get; set; } = new List<Subject>();
     }
 
 }

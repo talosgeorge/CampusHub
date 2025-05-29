@@ -10,37 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 
-static async Task SeedAdminAsync(IServiceProvider serviceProvider)
-{
-    var userManager = serviceProvider.GetRequiredService<UserManager<UserAccount>>();
-    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    string adminEmail = "admin@campushub.com";
-    string adminPassword = "Admin123!"; 
-
-    // Creează rolul dacă nu există
-    if (!await roleManager.RoleExistsAsync("admin"))
-    {
-        await roleManager.CreateAsync(new IdentityRole("admin"));
-    }
-
-    var adminUser = await userManager.FindByEmailAsync(adminEmail);
-    if (adminUser == null)
-    {
-        var user = new UserAccount
-        {
-            UserName = "admin",
-            Email = adminEmail,
-            EmailConfirmed = true
-        };
-
-        var result = await userManager.CreateAsync(user, adminPassword);
-        if (result.Succeeded)
-        {
-            await userManager.AddToRoleAsync(user, "admin");
-        }
-    }
-}
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -159,6 +129,37 @@ builder.Services.AddCors(options =>
 });
 
 // === Altele ===
+static async Task SeedAdminAsync(IServiceProvider serviceProvider)
+{
+    var userManager = serviceProvider.GetRequiredService<UserManager<UserAccount>>();
+    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    string adminEmail = "admin@campushub.com";
+    string adminPassword = "Admin123!";
+
+    // Creează rolul dacă nu există
+    if (!await roleManager.RoleExistsAsync("admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("admin"));
+    }
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        var user = new UserAccount
+        {
+            UserName = "admin",
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
+
+        var result = await userManager.CreateAsync(user, adminPassword);
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(user, "admin");
+        }
+    }
+}
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 interface Grade {
   gradeId: number;
@@ -12,6 +13,9 @@ interface Grade {
   semesterId: number;
   subjectName: string;
   credits: number;
+  fullName: string;
+  academicYear: string;
+  semesterName: string;
 }
 
 interface NewGrade {
@@ -36,6 +40,7 @@ interface Semester {
 interface Student {
   id: string;
   email: string;
+  fullName: string;
 }
 
 @Component({
@@ -50,7 +55,12 @@ export class GradesComponent implements OnInit {
   subjects: Subject[] = [];
   semesters: Semester[] = [];
   students: Student[] = [];
+  filteredStudents: Student[] = [];
+  studentSearch: string = '';
   selectedStudentId: string | null = null;
+
+  selectedYear: string | null = null;
+  selectedSemester: string | null = null;
 
   newGrade: NewGrade = {
     userAccountId: null,
@@ -62,7 +72,7 @@ export class GradesComponent implements OnInit {
 
   editGrade: Grade | null = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loadSubjects();
@@ -72,10 +82,12 @@ export class GradesComponent implements OnInit {
 
   loadGrades(): void {
     if (!this.selectedStudentId) return;
-
     this.http.get<Grade[]>(`/api/grades/getGradesByStudentId?userId=${this.selectedStudentId}`).subscribe({
-      next: (data) => this.grades = data,
-      error: (err) => console.error('Failed to load grades:', err)
+      next: data => this.grades = data,
+      error: err => {
+        console.error('Failed to load grades:', err);
+        this.toastr.error('Failed to load grades ❌');
+      }
     });
   }
 
@@ -91,12 +103,24 @@ export class GradesComponent implements OnInit {
 
   loadStudents(): void {
     this.http.get<Student[]>('/api/grades/getAllStudentsBasic')
-      .subscribe(data => this.students = data);
+      .subscribe(data => {
+        this.students = data;
+        this.filteredStudents = data;
+      });
   }
 
-  getStudentEmail(id: string): string {
-    const student = this.students.find(s => s.id === id);
-    return student ? student.email : 'Unknown';
+  filterStudents(): void {
+    const search = this.studentSearch.toLowerCase();
+    this.filteredStudents = this.students.filter(s =>
+      s.fullName?.toLowerCase().includes(search)
+    );
+  }
+
+  selectStudent(student: Student): void {
+    this.studentSearch = student.fullName;
+    this.selectedStudentId = student.id;
+    this.filteredStudents = [];
+    this.loadGrades();
   }
 
   addGrade(): void {
@@ -108,9 +132,28 @@ export class GradesComponent implements OnInit {
       date: this.newGrade.date
     };
 
-    this.http.post('/api/grades/addGrade', body).subscribe(() => {
-      this.resetForm();
-      this.loadGrades();
+    this.http.post('/api/grades/addGrade', body).subscribe({
+      next: () => {
+        this.resetForm();
+        this.loadGrades();
+        this.toastr.success('✅ Grade added successfully');
+      },
+      error: (err) => {
+        const rawError = err.error;
+        let errorMessage = 'An unexpected error occurred.';
+
+        if (typeof rawError === 'object' && rawError?.error) {
+          errorMessage = rawError.error;
+        } else if (typeof rawError === 'string') {
+          errorMessage = rawError;
+        }
+
+        if (err.status === 400 && errorMessage.toLowerCase().includes("grade already exists")) {
+          this.toastr.warning("⚠️ This student already has a grade for this subject");
+        } else {
+          this.toastr.error(`❌ Failed to add grade: ${errorMessage}`);
+        }
+      }
     });
   }
 
@@ -140,9 +183,15 @@ export class GradesComponent implements OnInit {
     };
 
     this.http.put(`/api/grades/updateGrade/${this.editGrade.gradeId}`, model)
-      .subscribe(() => {
-        this.editGrade = null;
-        this.loadGrades();
+      .subscribe({
+        next: () => {
+          this.editGrade = null;
+          this.loadGrades();
+          this.toastr.info('ℹ️ Grade updated');
+        },
+        error: () => {
+          this.toastr.error('❌ Failed to update grade');
+        }
       });
   }
 
@@ -153,7 +202,31 @@ export class GradesComponent implements OnInit {
   deleteGrade(id: number): void {
     if (confirm('Are you sure you want to delete this grade?')) {
       this.http.delete(`/api/grades/deleteGrade/${id}`)
-        .subscribe(() => this.loadGrades());
+        .subscribe({
+          next: () => {
+            this.loadGrades();
+            this.toastr.info('🗑️ Grade deleted');
+          },
+          error: () => {
+            this.toastr.error('❌ Failed to delete grade');
+          }
+        });
     }
+  }
+
+  get filteredGrades(): Grade[] {
+    return this.grades.filter(g => {
+      const yearMatch = !this.selectedYear || g.academicYear === this.selectedYear;
+      const semMatch = !this.selectedSemester || g.semesterName === this.selectedSemester;
+      return yearMatch && semMatch;
+    });
+  }
+
+  get uniqueAcademicYears(): string[] {
+    return [...new Set(this.grades.map(g => g.academicYear))];
+  }
+
+  get uniqueSemesters(): string[] {
+    return [...new Set(this.grades.map(g => g.semesterName))];
   }
 }

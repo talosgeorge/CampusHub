@@ -12,23 +12,35 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-  
-  loggedInAsStudent:boolean = false;
+
+  loggedInAsStudent: boolean = false;
+  loggedInAsAdmin: boolean = false;
   router = inject(Router);
 
-  ngOnInit(){
+  ngOnInit() {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('userRole');
 
-    if(token && role == 'student'){
+    if (token && role == 'student') {
       this.loggedInAsStudent = true;
     }
     else {
       this.loggedInAsStudent = false;
     }
 
-    if(this.loggedInAsStudent){
+    if (token && role == 'Admin') {
+      this.loggedInAsAdmin = true;
+    }
+    else{
+      this.loggedInAsAdmin = false;
+    }
+
+    if (this.loggedInAsStudent) {
       this.router.navigate(['/students']);
+    }
+
+    if(this.loggedInAsAdmin){
+      this.router.navigate(['/admin']);
     }
   }
 }

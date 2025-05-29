@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6tUwWhxQxwtTVGIo/hfS0CDbrj5Uiky7NwjwVkxiYQo=",
+  "Hash": "9dyuZmjlpJof3bRYBzDTeGrnXcQfSYpUIW6OL4kR+bY=",
   "Source": "CampusHub.Server",
   "BasePath": "_content/CampusHub.Server",
   "Mode": "Default",
@@ -1226,6 +1226,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\340f1f74-e8c5-4fc1-b4ba-aecb8be1b297.png"
     },
     {
+      "Identity": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\35ca3bee-3b5a-45c9-9e26-95a55e890756.png",
+      "SourceId": "CampusHub.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\",
+      "BasePath": "_content/CampusHub.Server",
+      "RelativePath": "uploads/35ca3bee-3b5a-45c9-9e26-95a55e890756.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\35ca3bee-3b5a-45c9-9e26-95a55e890756.png"
+    },
+    {
       "Identity": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\3ee5fa61-8f34-4df2-937c-a00ac461455e.png",
       "SourceId": "CampusHub.Server",
       "SourceType": "Discovered",
@@ -1357,6 +1376,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf"
+    },
+    {
+      "Identity": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\b1519a74-6a34-459f-982e-b5575ab93e64.png",
+      "SourceId": "CampusHub.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\",
+      "BasePath": "_content/CampusHub.Server",
+      "RelativePath": "uploads/b1519a74-6a34-459f-982e-b5575ab93e64.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\b1519a74-6a34-459f-982e-b5575ab93e64.png"
     },
     {
       "Identity": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\c8bce1ff-6596-495f-853c-6902f9baacb0.png",

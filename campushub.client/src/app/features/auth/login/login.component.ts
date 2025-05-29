@@ -16,18 +16,26 @@ export class LoginComponent {
   isLoading = false;
   usernameOrEmail: string = '';
   password: string = '';
+<<<<<<< Updated upstream
+=======
+  isConnected: boolean = false;
+>>>>>>> Stashed changes
 
   loginService = inject(LoginService);
   router = inject(Router);
 
   login(): void {
     this.isLoading = true;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     this.loginService.login(this.usernameOrEmail, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('token', res.token);
         localStorage.setItem('userId', res.userId);
         localStorage.setItem('userRole', res.role);
+<<<<<<< Updated upstream
 
         let redirectUrl = '/';
         switch (res.role) {
@@ -47,7 +55,20 @@ export class LoginComponent {
         });
 
         this.isLoading = false;
+=======
+        localStorage.setItem("userName", res.username);
+
+>>>>>>> Stashed changes
         this.errorMessage = '';
+        this.isConnected = true;
+
+        if (res.role === 'student') {
+          this.router.navigateByUrl('/students').then(() => window.location.reload());
+        } else if (res.role === 'admin') {
+          this.router.navigateByUrl('/admin').then(() => window.location.reload());
+        } else {
+          this.router.navigateByUrl('/'); // fallback
+        }
       },
       error: () => {
         this.errorMessage = 'Autentificare eșuată';
@@ -56,6 +77,7 @@ export class LoginComponent {
     });
   }
 
+<<<<<<< Updated upstream
   ngOnInit(): void {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('userRole');
@@ -75,6 +97,16 @@ export class LoginComponent {
       }
 
       this.router.navigate([redirectUrl]);
+=======
+  ngOnInit() {
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('userRole');
+
+    if (token && role === 'student') {
+      this.router.navigate(['/students']);
+    } else if (token && role === 'admin') {
+      this.router.navigate(['/admin']);
+>>>>>>> Stashed changes
     }
   }
 }

@@ -53,6 +53,13 @@
       "PackagePath": "staticwebassets\\uploads\\c8bce1ff-6596-495f-853c-6902f9baacb0.png"
     },
     {
+<<<<<<< Updated upstream
+=======
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\d94ec476-c148-446e-a336-4cef974c8a18.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\d94ec476-c148-446e-a336-4cef974c8a18.jpeg"
+    },
+    {
+>>>>>>> Stashed changes
       "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\dcbd34fd-7dd2-4a7f-b32f-9df51f5ccb08.png",
       "PackagePath": "staticwebassets\\uploads\\dcbd34fd-7dd2-4a7f-b32f-9df51f5ccb08.png"
     },

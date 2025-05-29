@@ -8,13 +8,33 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using System.Text;
+<<<<<<< Updated upstream
+=======
+using System.Text.Json;
+
+
+
+
+var builder = WebApplication.CreateBuilder(args);
+// Simi: DESKTOP-3KFCOVV\SQLEXPRESS
+// Talos: Talos\\SQLEXPRESS03
+// Chio: DESKTOP-SH9UD67\SQLEXPRESS
+// === Configurare conexiune DB ===
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? "Data Source=Talos\\SQLEXPRESS03;Initial Catalog=CampusHub;Integrated Security=True;TrustServerCertificate=True";
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString)
+           .LogTo(Console.WriteLine, LogLevel.Information)
+           .EnableSensitiveDataLogging());
+>>>>>>> Stashed changes
 static async Task SeedAdminAsync(IServiceProvider serviceProvider)
 {
     var userManager = serviceProvider.GetRequiredService<UserManager<UserAccount>>();
     var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
     string adminEmail = "admin@campushub.com";
-    string adminPassword = "Admin123!"; 
+    string adminPassword = "Admin123!";
 
     // Creează rolul dacă nu există
     if (!await roleManager.RoleExistsAsync("admin"))
@@ -39,6 +59,7 @@ static async Task SeedAdminAsync(IServiceProvider serviceProvider)
         }
     }
 }
+<<<<<<< Updated upstream
 
 var builder = WebApplication.CreateBuilder(args);
 // Simi: DESKTOP-3KFCOVV\SQLEXPRESS
@@ -52,6 +73,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
            .LogTo(Console.WriteLine, LogLevel.Information)
            .EnableSensitiveDataLogging());
 
+=======
+>>>>>>> Stashed changes
 // === Identity ===
 builder.Services.AddIdentity<UserAccount, IdentityRole>(options =>
 {
@@ -123,26 +146,7 @@ builder.Services.AddCors(options =>
 // === Altele ===
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "CampusHub API", Version = "v1" });
-    c.AddSecurityDefinition("Bearer", new()
-    {
-        Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Description = "Enter 'Bearer' [space] and then your valid JWT token."
-    });
-    c.AddSecurityRequirement(new()
-    {
-        {
-            new() { Reference = new() { Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme, Id = "Bearer" } },
-            Array.Empty<string>()
-        }
-    });
-});
+
 
 
 var app = builder.Build();

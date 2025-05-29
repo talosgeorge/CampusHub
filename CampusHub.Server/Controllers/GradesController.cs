@@ -152,7 +152,5 @@ namespace CampusHub.Server.Controllers
 
             return Ok(studentList);
         }
-
-
     }
 }

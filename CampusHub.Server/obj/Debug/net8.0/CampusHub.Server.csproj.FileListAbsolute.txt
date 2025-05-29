@@ -305,6 +305,7 @@ D:\CampusHub\CampusHub.Server\obj\Debug\net8.0\refint\CampusHub.Server.dll
 D:\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.pdb
 D:\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.genruntimeconfig.cache
 D:\CampusHub\CampusHub.Server\obj\Debug\net8.0\ref\CampusHub.Server.dll
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\bin\Debug\net8.0\spa.proxy.json
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\bin\Debug\net8.0\appsettings.Development.json
@@ -463,6 +464,8 @@ C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\ref\CampusHub.Server.dll
 C:\Users\molna\Documents\Anul 3\Sem 2\II\Proiect\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 =======
+=======
+>>>>>>> main
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.csproj.AssemblyReference.cache
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\spa.proxy.json
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.GeneratedMSBuildEditorConfig.editorconfig
@@ -618,5 +621,8 @@ C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\refint\CampusHub.Serve
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.pdb
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.genruntimeconfig.cache
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\ref\CampusHub.Server.dll
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 C:\Users\talos\Desktop\Proiect II\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+=======
+>>>>>>> main

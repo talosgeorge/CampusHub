@@ -48,6 +48,11 @@ const routes: Routes = [
       { path: 'academic-years', loadComponent: () => import('./components/admin/academic-years/academic-years.component').then(m => m.AcademicYearsComponent) }
     ]
   },
+  {
+    path: 'students/details',
+    loadComponent: () =>
+      import('./features/details/user-details.component').then(m => m.UserDetailsComponent)
+  }
 ];
 
 @NgModule({

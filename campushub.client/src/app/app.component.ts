@@ -1,16 +1,17 @@
-
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
+import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.scss'
+  imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
+  template: `
+    <app-student-nav-bar *ngIf="loggedInAsStudent"></app-student-nav-bar>
+    <router-outlet></router-outlet>
+  `
 })
-
 export class AppComponent {
 
   loggedInAsStudent: boolean = false;

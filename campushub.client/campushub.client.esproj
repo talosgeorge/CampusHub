@@ -9,6 +9,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="public\assets\NewFolder\" />
-    <Folder Include="src\app\shared\" />
+    <Folder Include="src\app\core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\app\shared\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\app\shared\**" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule,RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-student-nav-bar',
   standalone: true,
   templateUrl: './student-nav-bar.component.html',
   styleUrl: './student-nav-bar.component.scss',
-  imports:[RouterModule,NgIf]
+  imports: [RouterModule, NgIf, RouterLinkActive]
 })
 export class StudentNavBarComponent {
 

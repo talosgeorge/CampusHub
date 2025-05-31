@@ -1,17 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=K2D');
+
+.allComponents{
+  width: 100%;
+  position: absolute;
+  height: auto;
+}
+
 .grades-wrapper {
+  
   max-width: 900px;
   margin: 80px auto 40px; /* offset pt navbar */
+  margin-top: 100px;
+  
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 h2 {
   text-align: center;
   margin-bottom: 24px;
   color: #333;
+  font-family: 'k2d';
+  font-size: 30px;
 }
 
 .filter-section {

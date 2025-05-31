@@ -11,7 +11,7 @@
   </div>
 
   <div class="accountCircle">
-    <div class="avatar" (click)="toggleDropDown()">DS</div>
+    <div class="avatar" (click)="toggleDropDown()">{{avatarInitials}}</div>
     <div class="dropdown" *ngIf="dropDownOpen">
       <ul>
         <li (click)="disconnect()">Disconnect</li>

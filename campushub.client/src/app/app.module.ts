@@ -17,9 +17,10 @@ import { AcademicYearsComponent } from './components/admin/academic-years/academ
 
 @NgModule({
   declarations: [
-    AppComponent
+ 
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -32,7 +33,8 @@ import { AcademicYearsComponent } from './components/admin/academic-years/academ
     StudentComponent,
     StudentNavBarComponent,
     DocumentsPageComponent,
-    GradesPageComponent
+    GradesPageComponent,
+    AppComponent
   ],
   providers: [
     {

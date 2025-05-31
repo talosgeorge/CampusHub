@@ -4,7 +4,6 @@ import { Router, RouterOutlet } from '@angular/router';
 import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
 
 @Component({
-  standalone: true,
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
   template: `
@@ -24,6 +23,7 @@ export class AppComponent {
 
     if (token && role == 'student') {
       this.loggedInAsStudent = true;
+      this.router.navigate(['/students']);
     }
     else {
       this.loggedInAsStudent = false;
@@ -31,17 +31,10 @@ export class AppComponent {
 
     if (token && role == 'Admin') {
       this.loggedInAsAdmin = true;
+      this.router.navigate(['/admin']);
     }
     else{
       this.loggedInAsAdmin = false;
-    }
-
-    if (this.loggedInAsStudent) {
-      this.router.navigate(['/students']);
-    }
-
-    if(this.loggedInAsAdmin){
-      this.router.navigate(['/admin']);
     }
   }
 }

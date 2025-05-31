@@ -40,7 +40,7 @@ namespace CampusHub.Server.Data
 
                 // relație opțională cu UserAccount (Identity)
                 entity.HasOne(e => e.User)
-                      .WithOne()
+                      .WithOne(u => u.UserDetails)
                       .HasForeignKey<UserDetails>(e => e.UserId)
                       .HasPrincipalKey<UserAccount>(u => u.Id)
                       .OnDelete(DeleteBehavior.Cascade);

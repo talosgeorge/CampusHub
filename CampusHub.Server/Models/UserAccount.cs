@@ -10,6 +10,6 @@ namespace CampusHub.Server.Models
         public ICollection<Grade> Grades { get; set; }
         //public int? UserDetailsId { get; set; }
         //[ForeignKey("UserDetailsId")]
-        //public UserDetails? UserDetails { get; set; }
+        public virtual UserDetails? UserDetails { get; set; }
     }
 }

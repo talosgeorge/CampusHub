@@ -14,10 +14,12 @@ import { DocumentsPageComponent } from './features/documents/documents-page/docu
 import { GradesPageComponent } from './features/grades/grades-page/grades-page.component';
 import { AuthInterceptor } from './components/Interceptor/auth.interceptor'
 import { AcademicYearsComponent } from './components/admin/academic-years/academic-years.component'; // ✅ Importă interceptorul
+import { provideToastr } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
-    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -32,14 +34,24 @@ import { AcademicYearsComponent } from './components/admin/academic-years/academ
     StudentComponent,
     StudentNavBarComponent,
     DocumentsPageComponent,
-    GradesPageComponent
+    GradesPageComponent,
+    AppComponent,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000, // 5 secunde
+      positionClass: 'toast-top-center', // vizibil sus, centrat
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true
+    }),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    provideToastr()
   ],
   bootstrap: [AppComponent]
 })

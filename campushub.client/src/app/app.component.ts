@@ -4,7 +4,6 @@ import { Router, RouterOutlet } from '@angular/router';
 import { StudentNavBarComponent } from './components/student/student-nav-bar/student-nav-bar.component';
 
 @Component({
-  standalone: true,
   selector: 'app-root',
   imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
   template: `

@@ -1,13 +1,23 @@
 <div class="grades-container">
   <h2>Grades Management</h2>
-
-  <!-- Student Selection for Filtering -->
+  <!-- Search Student -->
   <div class="form-section">
-    <select [(ngModel)]="selectedStudentId" (change)="loadGrades()">
-      <option [ngValue]="null">Select student to view grades</option>
-      <option *ngFor="let student of students" [value]="student.id">
-        {{ student.email }}
-      </option>
+    <input type="text" [(ngModel)]="studentSearch" placeholder="Search student by name..." (input)="filterStudents()" />
+    <ul *ngIf="filteredStudents.length > 0 && studentSearch">
+      <li *ngFor="let student of filteredStudents" (click)="selectStudent(student)">
+        {{ student.fullName }}
+      </li>
+    </ul>
+    <label>Filter by Academic Year:</label>
+    <select [(ngModel)]="selectedYear">
+      <option [ngValue]="null">All years</option>
+      <option *ngFor="let year of uniqueAcademicYears">{{ year }}</option>
+    </select>
+
+    <label>Filter by Semester:</label>
+    <select [(ngModel)]="selectedSemester">
+      <option [ngValue]="null">All semesters</option>
+      <option *ngFor="let sem of uniqueSemesters">{{ sem }}</option>
     </select>
   </div>
 
@@ -16,7 +26,7 @@
     <select [(ngModel)]="newGrade.userAccountId">
       <option [ngValue]="null">Select Student</option>
       <option *ngFor="let student of students" [value]="student.id">
-        {{ student.email }}
+        {{ student.fullName }}
       </option>
     </select>
 
@@ -48,17 +58,21 @@
         <th>Student</th>
         <th>Subject</th>
         <th>Credits</th>
+        <th>Academic Year</th>
+        <th>Semester</th>
         <th>Grade</th>
         <th>Date</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let grade of grades">
+      <tr *ngFor="let grade of filteredGrades">
         <td>{{ grade.gradeId }}</td>
-        <td>{{ getStudentEmail(grade.userAccountId) }}</td>
+        <td>{{ grade.fullName }}</td>
         <td>{{ grade.subjectName }}</td>
         <td>{{ grade.credits }}</td>
+        <td>{{ grade.academicYear }}</td>
+        <td>{{ grade.semesterName }}</td>
 
         <td *ngIf="!editGrade || editGrade.gradeId !== grade.gradeId">{{ grade.value }}</td>
         <td *ngIf="editGrade && editGrade.gradeId === grade.gradeId">

@@ -460,3 +460,4 @@ C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\refint\CampusHub.Serve
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.pdb
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\CampusHub.Server.genruntimeconfig.cache
 C:\faculta\II\CampusHub\CampusHub.Server\obj\Debug\net8.0\ref\CampusHub.Server.dll
+C:\Users\talos\Desktop\Proiect II\CampusHub\CampusHub.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

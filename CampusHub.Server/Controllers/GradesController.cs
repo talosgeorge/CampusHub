@@ -104,7 +104,25 @@ namespace CampusHub.Server.Controllers
         {
             var grades = await _context.Grades
                 .Where(g => g.UserAccountId == userId)
-                .Include(g => g.Subject) // Optional: include related subject info
+                .Include(g => g.Subject)
+                .Include(g => g.UserAccount)
+                    .ThenInclude(u => u.UserDetails)
+                .Select(g => new
+                {
+                    gradeId = g.GradeId,
+                    value = g.Value,
+                    date = g.Date,
+                    userAccountId = g.UserAccountId,
+                    subjectId = g.SubjectId,
+                    semesterId = g.SemesterId,
+                    subjectName = g.Subject.SubjectName,
+                    credits = g.Subject.Credits,
+                    fullName = g.UserAccount.UserDetails != null
+                     ? $"{(g.UserAccount.UserDetails.prenume ?? "")} {(g.UserAccount.UserDetails.nume ?? "")}".Trim()
+                     : "Unknown",
+                    academicYear = g.Semester.AcademicYear.YearLabel,
+                    semesterName = g.Semester.Name
+                })
                 .ToListAsync();
 
             if (!grades.Any())
@@ -112,7 +130,9 @@ namespace CampusHub.Server.Controllers
 
             return Ok(grades);
         }
-        
+
+
+
         [HttpPut("updateGrade/{id}")]
         public async Task<IActionResult> UpdateGrade(int id, [FromBody] AddGradeModel model)
         {
@@ -144,15 +164,20 @@ namespace CampusHub.Server.Controllers
         {
             var students = await _userManager.GetUsersInRoleAsync("student");
 
-            var studentList = students.Select(s => new
-            {
-                Id = s.Id,
-                DisplayName = s.Email ?? s.UserName
-            });
+            var studentList = await _context.UserAccounts
+                .Include(u => u.UserDetails)
+                .Where(u => students.Select(s => s.Id).Contains(u.Id))
+                .Select(u => new
+                {
+                    id = u.Id,
+                    email = u.Email,
+                    fullName = u.UserDetails != null && u.UserDetails.prenume != null && u.UserDetails.nume != null
+                        ? $"{u.UserDetails.prenume} {u.UserDetails.nume}"
+                        : u.Email ?? u.UserName
+                })
+                .ToListAsync();
 
             return Ok(studentList);
         }
-
-
     }
 }

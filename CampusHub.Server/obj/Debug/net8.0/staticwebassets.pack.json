@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\2c71d78d-b5e7-42c5-b3d2-c6faa677d1e3.jpg",
       "PackagePath": "staticwebassets\\uploads\\2c71d78d-b5e7-42c5-b3d2-c6faa677d1e3.jpg"
     },
@@ -70,7 +71,82 @@
     },
     {
       "Id": "D:\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\fee1c547-7de0-4dcf-92f5-21f0b01f3b40.png",
+=======
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\2c71d78d-b5e7-42c5-b3d2-c6faa677d1e3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2c71d78d-b5e7-42c5-b3d2-c6faa677d1e3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\3152070d-3a47-451c-8cd5-dcfd4000a197.png",
+      "PackagePath": "staticwebassets\\uploads\\3152070d-3a47-451c-8cd5-dcfd4000a197.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\340f1f74-e8c5-4fc1-b4ba-aecb8be1b297.png",
+      "PackagePath": "staticwebassets\\uploads\\340f1f74-e8c5-4fc1-b4ba-aecb8be1b297.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\35ca3bee-3b5a-45c9-9e26-95a55e890756.png",
+      "PackagePath": "staticwebassets\\uploads\\35ca3bee-3b5a-45c9-9e26-95a55e890756.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\3ee5fa61-8f34-4df2-937c-a00ac461455e.png",
+      "PackagePath": "staticwebassets\\uploads\\3ee5fa61-8f34-4df2-937c-a00ac461455e.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\4558917b-eaa3-4043-8ffb-49c2f364a3f3.png",
+      "PackagePath": "staticwebassets\\uploads\\4558917b-eaa3-4043-8ffb-49c2f364a3f3.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf",
+      "PackagePath": "staticwebassets\\uploads\\470c13bb-476d-41a5-877f-c1c53e0e08e2.pdf"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\51d29f33-8c89-4804-ae69-a8c470249c2f.png",
+      "PackagePath": "staticwebassets\\uploads\\51d29f33-8c89-4804-ae69-a8c470249c2f.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf",
+      "PackagePath": "staticwebassets\\uploads\\542dadc3-2564-43e0-b91b-735fe69bb49f.pdf"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\5c9bb406-4b8e-4533-9c14-0e22656dc941.png",
+      "PackagePath": "staticwebassets\\uploads\\5c9bb406-4b8e-4533-9c14-0e22656dc941.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf",
+      "PackagePath": "staticwebassets\\uploads\\abc2862b-823c-4fad-8863-d21757d420d7.pdf"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\b1519a74-6a34-459f-982e-b5575ab93e64.png",
+      "PackagePath": "staticwebassets\\uploads\\b1519a74-6a34-459f-982e-b5575ab93e64.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\c8bce1ff-6596-495f-853c-6902f9baacb0.png",
+      "PackagePath": "staticwebassets\\uploads\\c8bce1ff-6596-495f-853c-6902f9baacb0.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\dcbd34fd-7dd2-4a7f-b32f-9df51f5ccb08.png",
+      "PackagePath": "staticwebassets\\uploads\\dcbd34fd-7dd2-4a7f-b32f-9df51f5ccb08.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\de8597cf-608e-4301-86d2-3c500e1b92e4.png",
+      "PackagePath": "staticwebassets\\uploads\\de8597cf-608e-4301-86d2-3c500e1b92e4.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\ee7f1d4b-22f3-41ba-809c-6932fbedc825.png",
+      "PackagePath": "staticwebassets\\uploads\\ee7f1d4b-22f3-41ba-809c-6932fbedc825.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\fe4698cc-138a-47dc-b30e-6bca3b7761d8.png",
+      "PackagePath": "staticwebassets\\uploads\\fe4698cc-138a-47dc-b30e-6bca3b7761d8.png"
+    },
+    {
+      "Id": "C:\\Users\\talos\\Desktop\\Proiect II\\CampusHub\\CampusHub.Server\\wwwroot\\uploads\\fee1c547-7de0-4dcf-92f5-21f0b01f3b40.png",
+>>>>>>> main
       "PackagePath": "staticwebassets\\uploads\\fee1c547-7de0-4dcf-92f5-21f0b01f3b40.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CampusHub.Server.Microsoft.AspNetCore.StaticWebAssets.props",

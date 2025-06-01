@@ -5,15 +5,14 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
-  template: `
-    <app-student-nav-bar *ngIf="loggedInAsStudent"></app-student-nav-bar>
-    <router-outlet></router-outlet>
-  `
+  standalone:false,
+  templateUrl: './app.component.html',
+  styleUrl:'./app.component.scss'
 })
 export class AppComponent {
   loggedInAsStudent: boolean = false;
   router = inject(Router);
+  loggedInAsAdmin = false;
 
   ngOnInit() {
     const token = localStorage.getItem('token');
@@ -21,8 +20,19 @@ export class AppComponent {
 
     this.loggedInAsStudent = !!(token && role === 'student');
 
+    if(token && role == 'admin'){
+      this.loggedInAsAdmin = true;
+    }
+    else{
+      this.loggedInAsAdmin = false;
+    }
+
     if (this.loggedInAsStudent) {
       this.router.navigate(['/students']);
+    }
+
+    if(this.loggedInAsAdmin){
+      this.router.navigate(['/admin'])
     }
   }
 }

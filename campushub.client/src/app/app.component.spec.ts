@@ -1,45 +1,64 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  let httpMock: HttpTestingController;
+  let router: Router;
+  let navigateSpy: jasmine.Spy;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [HttpClientTestingModule]
+      declarations: [AppComponent],  // declarăm componenta, nu o importăm
+      imports: [RouterTestingModule.withRoutes([])],
     }).compileComponents();
-  });
-
-  beforeEach(() => {
+  
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-    httpMock = TestBed.inject(HttpTestingController);
+    router = TestBed.inject(Router);
+    navigateSpy = spyOn(router, 'navigate');
   });
 
   afterEach(() => {
-    httpMock.verify();
+    localStorage.clear();
   });
 
-  it('should create the app', () => {
+  it('should create the app component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should retrieve weather forecasts from the server', () => {
-    const mockForecasts = [
-      { date: '2021-10-01', temperatureC: 20, temperatureF: 68, summary: 'Mild' },
-      { date: '2021-10-02', temperatureC: 25, temperatureF: 77, summary: 'Warm' }
-    ];
+  it('should set loggedInAsStudent and navigate to /students when token and student role exist', () => {
+    localStorage.setItem('token', 'dummy-token');
+    localStorage.setItem('userRole', 'student');
 
-  
+    component.ngOnInit();
 
-    const req = httpMock.expectOne('/weatherforecast');
-    expect(req.request.method).toEqual('GET');
-    req.flush(mockForecasts);
+    expect(component.loggedInAsStudent).toBeTrue();
+    expect(component.loggedInAsAdmin).toBeFalse();
+    expect(navigateSpy).toHaveBeenCalledWith(['/students']);
+  });
 
-    
+  it('should set loggedInAsAdmin and navigate to /admin when token and admin role exist', () => {
+    localStorage.setItem('token', 'dummy-token');
+    localStorage.setItem('userRole', 'admin');
+
+    component.ngOnInit();
+
+    expect(component.loggedInAsAdmin).toBeTrue();
+    expect(component.loggedInAsStudent).toBeFalse();
+    expect(navigateSpy).toHaveBeenCalledWith(['/admin']);
+  });
+
+  it('should not set loggedInAsStudent or loggedInAsAdmin if no valid token or role', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userRole');
+
+    component.ngOnInit();
+
+    expect(component.loggedInAsStudent).toBeFalse();
+    expect(component.loggedInAsAdmin).toBeFalse();
+    expect(navigateSpy).not.toHaveBeenCalled();
   });
 });

@@ -1,3 +1,9 @@
+.allElements{
+  width: 100%;
+  position: absolute;
+  margin-top: 5vh;
+}
+
 .grades-wrapper {
   max-width: 900px;
   margin: 80px auto 40px; /* offset pt navbar */

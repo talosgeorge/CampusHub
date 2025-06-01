@@ -17,9 +17,13 @@ import { AcademicYearsComponent } from './components/admin/academic-years/academ
 import { provideToastr } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { A11yModule } from '@angular/cdk/a11y';
+
 
 @NgModule({
-  declarations: [
+  declarations:[
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -28,23 +32,17 @@ import { ToastrModule } from 'ngx-toastr';
     RouterOutlet,
     ReactiveFormsModule,
     FormsModule,
-    HomeComponent,
-    RegisterComponent,
-    LoginComponent,
-    StudentComponent,
-    StudentNavBarComponent,
     DocumentsPageComponent,
-    GradesPageComponent,
-    AppComponent,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 5000, // 5 secunde
-      positionClass: 'toast-top-center', // vizibil sus, centrat
-      preventDuplicates: true,
-      closeButton: true,
-      progressBar: true
+        timeOut: 5000, // 5 secunde
+        positionClass: 'toast-top-center', // vizibil sus, centrat
+        preventDuplicates: true,
+        closeButton: true,
+        progressBar: true
     }),
-  ],
+    StudentNavBarComponent,
+],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

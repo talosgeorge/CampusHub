@@ -51,7 +51,7 @@ const routes: Routes = [
   {
     path: 'students/details',
     loadComponent: () =>
-      import('./features/details/user-details.component').then(m => m.UserDetailsComponent)
+      import('./features/details/user-details.component').then((m) => m.UserDetailsComponent)
   }
 ];
 

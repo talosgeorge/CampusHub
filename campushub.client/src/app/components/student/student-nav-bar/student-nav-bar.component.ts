@@ -13,9 +13,15 @@ export class StudentNavBarComponent {
 
   router = inject(Router);
   dropDownOpen:boolean = false;
+  username = '';
 
   toggleDropDown(){
     this.dropDownOpen = !this.dropDownOpen;
+  }
+
+  ngOnInit(){
+    this.username = localStorage.getItem("userName") || '';
+    this.username = this.username.substring(0,2).toLocaleUpperCase();
   }
 
   disconnect():void{

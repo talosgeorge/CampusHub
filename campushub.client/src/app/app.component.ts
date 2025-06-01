@@ -5,7 +5,7 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, StudentNavBarComponent],
+  standalone:false,
   template: `
     <app-student-nav-bar *ngIf="loggedInAsStudent"></app-student-nav-bar>
     <router-outlet></router-outlet>

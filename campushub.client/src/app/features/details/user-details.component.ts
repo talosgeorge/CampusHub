@@ -1,36 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ReactiveFormsModule,
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormsModule,
-  AbstractControl,
-  ValidationErrors
-} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { UserDetails, UserDetailsService } from './services/user-details.service';
+
 
 @Component({
   standalone: true,
+  selector: 'app-user-details',
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule,
-    MatSnackBarModule
+    RouterModule,
+    MatSnackBarModule,
+    FormsModule
   ],
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailsComponent {
+  clearHandicap() {
+    this.detailsForm.get('handicap')?.setValue('');
+  }
+  
   detailsForm: FormGroup;
   isLoading = false;
+  usersDetailsService = inject(UserDetailsService);
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private snackBar: MatSnackBar
   ) {
@@ -38,7 +37,7 @@ export class UserDetailsComponent implements OnInit {
       cnp: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13)]],
       nrMatricol: ['', Validators.required],
       facultate: ['', Validators.required],
-      dataNasterii: ['', [Validators.required,this.dateNotInFutureValidator]],
+      dataNasterii: ['', [Validators.required, this.dateNotInFutureValidator]],
       nume: ['', Validators.required],
       prenume: ['', Validators.required],
       prenumeTata: [''],
@@ -60,8 +59,8 @@ export class UserDetailsComponent implements OnInit {
 
   loadUserDetails(): void {
     this.isLoading = true;
-    this.http.get('https://localhost:7284/api/userdetails/my').subscribe({
-      next: (data: any) => {
+    this.usersDetailsService.getMyDetails().subscribe({
+      next: (data: { dataNasterii: string; }) => {
         const formattedData = {
           ...data,
           dataNasterii: this.convertToInputDate(data.dataNasterii)
@@ -78,71 +77,50 @@ export class UserDetailsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Form submitted', this.detailsForm.value);
-    console.log('Form valid:', this.detailsForm.valid);
-
-    if (this.detailsForm.valid) {
-      this.isLoading = true;
-
-      const userId = this.getUserIdFromToken();
-      if (!userId) {
-        this.showError('User ID invalid sau token expirat.');
-        this.isLoading = false;
-        return;
-      }
-
-      const formData = {
-        ...this.detailsForm.value,
-        dataNasterii: new Date(this.detailsForm.value.dataNasterii).toISOString(),
-        userId: userId
-      };
-
-      console.log('Data being sent:', formData);
-
-      this.http.post('https://localhost:7284/api/userdetails', formData).subscribe({
-        next: (response) => {
-          console.log('Save successful', response);
-          this.isLoading = false;
-          this.snackBar.open('Saved successfully!', 'Close', { duration: 3000 });
-          this.router.navigate(['/students']);
-        },
-        error: (err) => {
-          console.error('Save error:', err);
-          this.isLoading = false;
-          this.snackBar.open(
-            `Error: ${err.error?.Message || err.message}`,
-            'Close',
-            { duration: 5000 }
-          );
-        }
-      });
-    } else {
-      console.log('Form invalid, errors:', this.detailsForm.errors);
+    if (!this.detailsForm.valid) {
       this.markAllAsTouched();
+      return;
     }
+
+    this.isLoading = true;
+
+    const userId = this.getUserIdFromToken();
+    if (!userId) {
+      this.showError('User ID invalid sau token expirat.');
+      this.isLoading = false;
+      return;
+    }
+
+    const formData: UserDetails = {
+      ...this.detailsForm.value,
+      dataNasterii: new Date(this.detailsForm.value.dataNasterii).toISOString(),
+      userId
+    };
+
+    this.usersDetailsService.saveDetails(formData).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.snackBar.open('Saved successfully!', 'Close', { duration: 3000 });
+        this.router.navigate(['/students']);
+      },
+      error: (err) => {
+        console.error('Save error:', err);
+        this.isLoading = false;
+        this.snackBar.open(
+          `Error: ${err.error?.Message || err.message}`,
+          'Close',
+          { duration: 5000 }
+        );
+      }
+    });
   }
 
-  private convertToInputDate(backendDate: string): string {
-    if (!backendDate) return '';
-    return backendDate.split('T')[0];
-  }
-  clearHandicap(): void {
-    this.detailsForm.get('handicap')?.setValue('');
-  }
-  private dateNotInFutureValidator(control: AbstractControl): ValidationErrors | null {
-    const today = new Date();
-    const inputDate = new Date(control.value);
-    if (inputDate > today) {
-      return { futureDate: true };
-    }
-    return null;
-  }
   deleteDetails(): void {
     const confirmDelete = confirm("Are you sure you want to delete all your personal data");
 
     if (!confirmDelete) return;
 
-    this.http.delete('https://localhost:7284/api/userdetails/my').subscribe({
+    this.usersDetailsService.deleteMyDetails().subscribe({
       next: () => {
         this.snackBar.open("Data has been deleted", "Close", { duration: 3000 });
         this.detailsForm.reset();
@@ -154,6 +132,19 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
+  private convertToInputDate(backendDate: string): string {
+    if (!backendDate) return '';
+    return backendDate.split('T')[0];
+  }
+
+  private dateNotInFutureValidator(control: AbstractControl): ValidationErrors | null {
+    const today = new Date();
+    const inputDate = new Date(control.value);
+    if (inputDate > today) {
+      return { futureDate: true };
+    }
+    return null;
+  }
 
   private showError(message: string): void {
     this.snackBar.open(message, 'Închide', {
@@ -161,7 +152,6 @@ export class UserDetailsComponent implements OnInit {
       panelClass: ['error-snackbar']
     });
   }
-
 
   private markAllAsTouched(): void {
     Object.values(this.detailsForm.controls).forEach(control => {

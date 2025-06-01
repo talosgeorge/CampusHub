@@ -18,6 +18,8 @@ import { provideToastr } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { A11yModule } from '@angular/cdk/a11y';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserDetailsComponent } from './features/details/user-details.component';
 
 
 @NgModule({
@@ -27,21 +29,11 @@ import { A11yModule } from '@angular/cdk/a11y';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     RouterOutlet,
-    ReactiveFormsModule,
-    FormsModule,
-    DocumentsPageComponent,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-        timeOut: 5000, // 5 secunde
-        positionClass: 'toast-top-center', // vizibil sus, centrat
-        preventDuplicates: true,
-        closeButton: true,
-        progressBar: true
-    }),
-    StudentNavBarComponent,
+    StudentNavBarComponent
 ],
   providers: [
     {

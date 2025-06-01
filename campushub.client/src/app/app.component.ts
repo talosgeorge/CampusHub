@@ -12,6 +12,7 @@ import { StudentNavBarComponent } from './components/student/student-nav-bar/stu
 export class AppComponent {
   loggedInAsStudent: boolean = false;
   router = inject(Router);
+  loggedInAsAdmin = false;
 
   ngOnInit() {
     const token = localStorage.getItem('token');
@@ -19,8 +20,19 @@ export class AppComponent {
 
     this.loggedInAsStudent = !!(token && role === 'student');
 
+    if(token && role == 'admin'){
+      this.loggedInAsAdmin = true;
+    }
+    else{
+      this.loggedInAsAdmin = false;
+    }
+
     if (this.loggedInAsStudent) {
       this.router.navigate(['/students']);
+    }
+
+    if(this.loggedInAsAdmin){
+      this.router.navigate(['/admin'])
     }
   }
 }

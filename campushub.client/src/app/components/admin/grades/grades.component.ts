@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -71,8 +71,9 @@ export class GradesComponent implements OnInit {
   };
 
   editGrade: Grade | null = null;
+  toastr = inject(ToastrService);
 
-  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.loadSubjects();

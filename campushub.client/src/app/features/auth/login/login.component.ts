@@ -20,6 +20,7 @@ export class LoginComponent {
   password:string = '';
   isConnected:boolean = false;
   isLoggedInAsStudent:boolean = false;
+  isLoggedInAsAdmin = false;
 
 
   loginService = inject(LoginService);
@@ -59,8 +60,19 @@ export class LoginComponent {
       this.isLoggedInAsStudent = false;
     }
 
+    if(token && role == 'admin'){
+      this.isLoggedInAsAdmin = true;
+    }
+    else{
+      this.isLoggedInAsAdmin = false;
+    }
+
     if(this.isLoggedInAsStudent){
       this.router.navigate(['/students']);
+    }
+
+    if(this.isLoggedInAsAdmin){
+      this.router.navigate(['/admin']);
     }
     
   }
